@@ -389,7 +389,9 @@ body {
   -webkit-font-smoothing: antialiased;
   max-width: calc(1200px + 16vw);
   margin: auto;
-  padding: 0 8vw; }
+  padding: 0 8vw;
+  background: linear-gradient(to right, #4e4376, #2b5876);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
 
 hr {
   background-color: #ccc;
