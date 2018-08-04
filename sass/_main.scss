@@ -1,0 +1,133 @@
+// Main
+.main {
+  position: relative;
+}
+
+.post-edit-link {
+  position: fixed;
+  bottom: $spacing-small;
+  right: $spacing-small;
+  text-decoration: none;
+}
+
+.hero-text {
+  margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
+
+  p {
+    @include fade-in($fade-two);
+    font-size: 6vw;
+    max-width: 1000px;
+    //font-family: 'Raleway';
+
+    @include xlarge {
+      font-size: 5rem;
+    }
+
+    @include medium {
+      font-size: 8vw;
+    }
+
+    @include small {
+      font-size: 10vw;
+    }
+  }
+}
+
+// Posts on home
+.posts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: $spacing-medium;
+
+  @include medium {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include small {
+    grid-template-columns: 1fr;
+  }
+}
+
+.post {
+  margin-bottom: $spacing-large;
+
+  &__title {
+    margin-bottom: .5rem;
+  }
+
+  h1 {
+    font-size: $font-size-xlarge;
+  }
+
+  a {
+    color: $color-text;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  p {
+    font-size: $font-size-small;
+  }
+
+  img,
+  .featured-video-plus {
+    margin-bottom: 1rem;
+  }
+}
+
+// Individual post pages
+.single {
+
+  .post {
+    margin-bottom: 0;
+
+    p {
+      font-size: $font-size-medium;
+    }
+
+    img {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.entry-content {
+
+  a {
+    margin-right: $spacing-small;
+  }
+
+  p {
+    @include fade-in($fade-three);
+  }
+}
+
+.posted-on {
+  font-weight: 700;
+}
+
+canvas {
+  display: none;
+}
+
+.p5 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  &.active {
+
+    canvas {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.footer {
+	margin: $spacing-large 0;
+
+	&__links {
+		display: flex;
+		list-style: none;
+		margin: $spacing-small 0;
+		padding-left: 0;
+		flex-wrap: wrap;
+
+		li {
+			padding: $spacing-small 0;
+
+			a {
+				// padding: $spacing-small;
+				margin-right: $spacing-small;
+				text-decoration: none;
+				color: $color-text;
+			}
+		}
+	}
+
+	&__email {
+		color: $color-text;
+		text-decoration: none;
+		 //font-size: #{$font-size-small * .75};
+		color: $color-text-gray;
+	}
+}

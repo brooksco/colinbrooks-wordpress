@@ -1,0 +1,54 @@
+//@import url('https://fonts.googleapis.com/css?family=Raleway:400,600');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,600');
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $color-text;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  //font-family: 'Raleway';
+  font-weight: 600;
+  clear: both;
+  margin: 0 0 1.5rem 0;
+}
+
+h1 {
+  @include fade-in($fade-two);
+  font-size: 13vw;
+
+  @include xlarge {
+    font-size: 10rem;
+  }
+}
+
+p {
+  font-size: $font-size-medium;
+  font-weight: 400;
+  margin: 0 0 1.5rem 0;
+  max-width: $paragraph-max-width;
+}
+
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 1.5rem;
+}
+
+address {
+  margin: 0 0 1.5rem;
+}
+
+big {
+  font-size: 125%;
+}
+

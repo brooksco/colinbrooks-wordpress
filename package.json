@@ -1,0 +1,21 @@
+{
+  "name": "colinbooks",
+  "version": "1.0.0",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.3.5",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1",
+    "isotope-layout": "^3.0.6",
+    "merge-stream": "^1.0.1",
+    "p5": "^0.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3"
+  }
+}

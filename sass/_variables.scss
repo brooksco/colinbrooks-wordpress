@@ -1,0 +1,69 @@
+// Variables
+
+// Colors
+$color-background: #000;
+$color-background-hr: #ccc;
+
+$color-link: royalblue;
+$color-link-hover: midnightblue;
+
+$color-blue: #4169e1;
+$color-pink: #e82199;
+$color-red-pink: #e14169;
+
+$color-text: #ffffff;
+$color-text-gray: #adadad;
+
+// https://uigradients.com/#SeaBlue
+//background: #2b5876;  /* fallback for old browsers */
+//background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+//background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+// Typography
+$base-font-size: 16px;
+$base-line-height: 1.4;
+$paragraph-max-width: 800px;
+
+$font-size-small: 1rem;
+$font-size-medium: 1.25rem;
+$font-size-large: 2rem;
+$font-size-xlarge: 4rem;
+
+// Layout
+$medium-min-width: 600px;
+$large-min-width: 900px;
+$xlarge-min-width: 1200px;
+
+$spacing-small: 16px;
+$spacing-medium: 32px;
+$spacing-large: 64px;
+$spacing-xlarge: 128px;
+
+$max-width: 1200px;
+$body-padding: 8vw;
+
+$columns: (
+        1: 100%,
+        2: 50%,
+        3: 33.33%,
+        4: 25%,
+        5: 20%,
+        6: 16.66%,
+        7: 14.28%,
+        8: 12.5%,
+        9: 11.11%
+);
+
+$columns__margin: 3.8%;
+
+// Transitions
+$all-transition: all 200ms ease-out;
+$fade-transition-duration: 200ms;
+
+$fade-base: 50ms;
+$fade-one: $fade-base;
+$fade-two: #{$fade-base * 2};
+$fade-three: #{$fade-base * 3};
+$fade-four: #{$fade-base * 4};
+$fade-five: #{$fade-base * 5};

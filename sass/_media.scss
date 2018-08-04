@@ -1,0 +1,111 @@
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+		@include center-block;
+	}
+
+	.wp-caption-text {
+		margin: 0.8075em 0;
+	}
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	display: block;
+	opacity: 0;
+	width: calc(100% + #{$body-padding * 2});
+	margin: $spacing-large 0 0 -#{$body-padding};
+	transition: $all-transition;
+
+	// &--initial {
+	// 	display: none;
+	// 	column-count: 3;
+	// 	column-gap: 0;
+
+	// 	@include medium {
+	// 		column-count: 2;
+	// 	}
+
+	// 	@include small {
+	// 		column-count: 1;
+	// 	}
+
+	// 	.gallery-item {
+	// 		width: 100%;
+	// 		break-inside: avoid;
+	// 	}
+	// }
+
+	&.active {
+		opacity: 1;
+	}
+}
+
+.gallery-item {
+	display: block;
+	margin: 0;
+	width: 33.33%;
+
+	@include medium {
+		width: 50%;
+	}
+
+	@include small {
+		width: 100%;
+	}
+}
+
+.gallery-caption {
+	display: block;
+}
+
+// Fancybox overrides
+$fancybox-control-size: 64px;
+
+.fancybox-bg {
+	background: $color-background !important;
+}
+
+.fancybox-button {
+	background: none !important;
+	width: $fancybox-control-size !important;
+	height: $fancybox-control-size !important;
+}
+
+.fancybox-navigation .fancybox-button {
+	top: calc(50% - #{$fancybox-control-size / 2}) !important;
+}
+
