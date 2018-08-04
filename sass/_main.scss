@@ -17,6 +17,7 @@
     @include fade-in($fade-two);
     font-size: 6vw;
     max-width: 1000px;
+    font-weight: 600;
     //font-family: 'Raleway';
 
     @include xlarge {
@@ -48,6 +49,13 @@
 
   @include small {
     grid-template-columns: 1fr;
+
+    img,
+    .featured-video-plus {
+      margin-left: -8vw;
+      width: calc(100% + #{$body-padding * 2});
+      max-width: none;
+    }
   }
 }
 

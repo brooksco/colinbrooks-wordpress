@@ -525,7 +525,8 @@ a {
     animation-delay: 100ms;
     position: relative;
     font-size: 6vw;
-    max-width: 1000px; }
+    max-width: 1000px;
+    font-weight: 600; }
     @media (min-width: 1200px) {
       .hero-text p {
         font-size: 5rem; } }
@@ -548,7 +549,12 @@ a {
       grid-template-columns: 1fr 1fr; } }
   @media (max-width: 599px) {
     .posts {
-      grid-template-columns: 1fr; } }
+      grid-template-columns: 1fr; }
+      .posts img,
+      .posts .featured-video-plus {
+        margin-left: -8vw;
+        width: calc(100% + 16vw);
+        max-width: none; } }
 
 .post {
   margin-bottom: 64px; }
