@@ -575,17 +575,18 @@ a {
 .post {
   margin-bottom: 64px; }
   .post__title {
-    margin-bottom: .5rem;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    margin-bottom: .5rem; }
   .post__content a {
     text-decoration: underline !important; }
+  .post__thumb:hover {
+    opacity: 1; }
   .post h1 {
     font-size: 4rem; }
   .post a {
+    display: block;
     color: #ffffff;
     text-decoration: none; }
-    .post a:hover {
-      opacity: 1; }
   .post p {
     font-size: 1rem; }
   .post img,

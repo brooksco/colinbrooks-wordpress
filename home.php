@@ -41,8 +41,13 @@ get_header();
                     $post_query->the_post(); ?>
 
                     <li class="post">
+                        <?php if (has_post_thumbnail()) { ?>
+                            <a class="post__thumb" href="<?php echo get_permalink(); ?>">
+                                <?php the_post_thumbnail(); ?>
+                            </a>
+                        <?php } ?>
+
                         <a href="<?php echo get_permalink(); ?>">
-                            <?php the_post_thumbnail(); ?>
                             <h3 class="post__title"><?php the_title(); ?></h3>
                         </a>
 

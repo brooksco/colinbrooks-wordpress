@@ -73,8 +73,8 @@
   margin-bottom: $spacing-large;
 
   &__title {
-    margin-bottom: .5rem;
     font-size: 1.25rem;
+    margin-bottom: .5rem;
   }
 
   &__content {
@@ -84,17 +84,21 @@
     }
   }
 
+  &__thumb {
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   h1 {
     font-size: $font-size-xlarge;
   }
 
   a {
+    display: block;
     color: $color-text;
     text-decoration: none;
-
-    &:hover {
-      opacity: 1;
-    }
   }
 
   p {
