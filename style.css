@@ -577,6 +577,8 @@ a {
   .post__title {
     margin-bottom: .5rem;
     font-size: 1.25rem; }
+  .post__content a {
+    text-decoration: underline; }
   .post h1 {
     font-size: 4rem; }
   .post a {

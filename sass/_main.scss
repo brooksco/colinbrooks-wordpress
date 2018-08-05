@@ -77,6 +77,13 @@
     font-size: 1.25rem;
   }
 
+  &__content {
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
   h1 {
     font-size: $font-size-xlarge;
   }

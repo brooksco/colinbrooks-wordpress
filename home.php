@@ -45,7 +45,10 @@ get_header();
                             <?php the_post_thumbnail(); ?>
                             <h3 class="post__title"><?php the_title(); ?></h3>
                         </a>
-                        <?php the_content(); ?>
+
+                        <div class="post__content">
+                            <?php the_content(); ?>
+                        </div>
                     </li>
                 <?php }
             } ?>
