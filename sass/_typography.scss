@@ -7,10 +7,10 @@ input,
 select,
 optgroup,
 textarea {
+  font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
   color: $color-text;
-  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {

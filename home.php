@@ -29,7 +29,7 @@ get_header();
 
         <?php endwhile; // End of the loop. ?>
 
-        <p>Recent work</p>
+        <h2 class="posts__title">Recent work</h2>
 
         <ul class="posts">
 
@@ -44,8 +44,9 @@ get_header();
                         <a href="<?php echo get_permalink(); ?>">
                             <?php the_post_thumbnail(); ?>
                             <h3 class="post__title"><?php the_title(); ?></h3>
+
+                            <?php the_content(); ?>
                         </a>
-                        <?php the_content(); ?>
                     </li>
                 <?php }
             } ?>

@@ -36,12 +36,22 @@
 
 // Posts on home
 .posts {
+  @include fade-in($fade-three);
   margin: 0;
   padding: 0;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: $spacing-medium;
+
+  &__title {
+    @include fade-in($fade-three);
+    font-family: $base-font-family;
+    font-size: 1.25rem;
+    line-height: $base-line-height;
+    font-weight: $base-font-weight;
+    margin: $spacing-medium 0;
+  }
 
   @include medium {
     grid-template-columns: 1fr 1fr;
@@ -64,6 +74,7 @@
 
   &__title {
     margin-bottom: .5rem;
+    font-size: 1.25rem;
   }
 
   h1 {
@@ -117,7 +128,8 @@
 }
 
 .posted-on {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
 canvas {
