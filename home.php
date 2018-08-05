@@ -44,9 +44,8 @@ get_header();
                         <a href="<?php echo get_permalink(); ?>">
                             <?php the_post_thumbnail(); ?>
                             <h3 class="post__title"><?php the_title(); ?></h3>
-
-                            <?php the_content(); ?>
                         </a>
+                        <?php the_content(); ?>
                     </li>
                 <?php }
             } ?>
