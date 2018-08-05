@@ -32,7 +32,6 @@ get_header();
         <h2 class="posts__title">Recent work</h2>
 
         <ul class="posts">
-
             <?php
             $post_query = new WP_Query(['post_type' => 'post', 'posts_per_page' => -1]);
 
@@ -47,17 +46,19 @@ get_header();
                             </a>
                         <?php } ?>
 
+
                         <a href="<?php echo get_permalink(); ?>">
-                            <h3 class="post__title"><?php the_title(); ?></h3>
+                            <h3 class="post__title">
+                                <?php the_title(); ?>
+                            </h3>
                         </a>
 
                         <div class="post__content">
-                            <?php the_content(); ?>
+                            <?php the_excerpt(); ?>
                         </div>
                     </li>
                 <?php }
             } ?>
-
         </ul>
 
         <div id="p5" class="p5"></div>
