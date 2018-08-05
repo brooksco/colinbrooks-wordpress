@@ -41,7 +41,7 @@ if (window.location.pathname == '/') {
     }
 
     function updateStroke() {
-        isMobile ? strokeAlpha = 80 : strokeAlpha = 64;
+        isMobile ? strokeAlpha = 90 : strokeAlpha = 64;
     }
 
     function setupDrops() {
