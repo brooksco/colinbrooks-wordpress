@@ -34,7 +34,7 @@ get_header();
         <ul class="posts">
 
             <?php
-            $post_query = new WP_Query(['post_type' => 'post']);
+            $post_query = new WP_Query(['post_type' => 'post', 'posts_per_page' => -1]);
 
             if ($post_query->have_posts()) {
                 while ($post_query->have_posts()) {
