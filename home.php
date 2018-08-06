@@ -61,7 +61,7 @@ get_header();
             } ?>
         </ul>
 
-        <div id="p5" class="p5"></div>
+        <div id="p5" class="p5" data-animation="<?php echo rand ( 0, 1 ) ?>"></div>
 
         <?php edit_post_link('Edit', '', '', get_option('page_on_front')); ?>
     </main><!-- #main -->
