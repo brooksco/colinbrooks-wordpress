@@ -1,15 +1,16 @@
-$(document).ready(function () {
-    window.animation = (window.animation === undefined) ? document.querySelector('.p5').dataset.animation : window.animation;
-    if (window.location.pathname == '/' && window.animation == 1) {
+// Lines (Perlin)
+if (window.location.pathname == '/') {
+    $(document).ready(function () {
         var p5Lines = new p5(function (p) {
             let width = window.innerWidth;
             let height = window.innerHeight;
             let particles = [];
-            let minParticles = 200;
-            let maxParticles = minParticles * 2;
-            let isMobile = window.innerWidth < 600;
+            let minParticles = 0;
+            let maxParticles = 0;
 
-            let noiseScale = 100;
+            let noiseScale = 200;
+            let fillAlpha = 32;
+            let backgroundAlpha = 8;
 
             function startingX() {
                 return p.random(-(width / 4), width + (width / 4));
@@ -25,7 +26,7 @@ $(document).ready(function () {
 
                 p.frameRate(60);
 
-                minParticles = p.windowWidth / 5;
+                minParticles = p.windowWidth / 2;
                 maxParticles = minParticles * 2;
 
                 for (let i = 0; i < minParticles; i++) {
@@ -39,7 +40,7 @@ $(document).ready(function () {
 
 
             p.draw = function () {
-                p.background(0, 0, 0, 4);
+                p.background(0, 0, 0, backgroundAlpha);
                 p.noStroke();
 
                 for (let i = 0; i < particles.length; i++) {
@@ -52,7 +53,7 @@ $(document).ready(function () {
 
             function update() {
 
-                if (p.frameCount % 10 == 0) {
+                if (p.frameCount % 2 == 0) {
                     if (particles.length < maxParticles) {
                         let newParticle = new particle(startingX(), startingY());
                         particles.push(newParticle);
@@ -67,30 +68,37 @@ $(document).ready(function () {
 
                 this.move = function () {
                     let angle = p.noise(this.position.x / noiseScale, this.position.y / noiseScale) * p.TWO_PI;
-                    // let angle =
                     this.direction.x = p.cos(angle);
                     this.direction.y = p.sin(angle);
 
                     this.direction.mult(this.speed);
                     this.position.add(this.direction);
 
-                    if (this.position.x > p.windowWidth || this.position.x < 0 || this.position.y > p.windowHeight || this.position.y < 0) {
-                        this.position = p.createVector(p.random(p.windowWidth), p.random(p.windowHeight));
+                    if (this.position.x > width || this.position.x < 0 || this.position.y > height || this.position.y < 0) {
+                        this.position = p.createVector(p.random(width), p.random(height));
                     }
                 }
 
                 this.draw = function () {
-                    p.fill(128, 128, 255, 16);
+                    p.fill(128, 128, 255, fillAlpha);
                     p.ellipse(this.position.x, this.position.y, 2, 2);
                 }
             }
 
             p.windowResized = function () {
-                minParticles = p.windowWidth / 5;
-                maxParticles = minParticles * 2;
+                // Don't run on height changes because realistically it's mobile and the navbar moving
+                let currentWidth = window.innerWidth;
+                // If the width changed...
+                if (width != currentWidth) {
+                    width = currentWidth;
+                    height = window.innerHeight;
 
-                p.resizeCanvas(p.windowWidth, p.windowHeight);
+                    minParticles = p.windowWidth / 5;
+                    maxParticles = minParticles * 2;
+
+                    p.resizeCanvas(p.windowWidth, p.windowHeight);
+                }
             }
         });
-    }
-});
+    });
+}

@@ -1,6 +1,6 @@
-$(document).ready(function () {
-    window.animation = (window.animation === undefined) ? document.querySelector('.p5').dataset.animation : window.animation;
-    if (window.location.pathname == '/' && window.animation == 0) {
+// Rain
+if (window.location.pathname == '/' && false) {
+    $(document).ready(function () {
         var p5Rain = new p5(function (p) {
             let width = window.innerWidth;
             let height = window.innerHeight;
@@ -88,5 +88,5 @@ $(document).ready(function () {
                 p.resizeCanvas(p.windowWidth, p.windowHeight);
             }
         });
-    }
-});
+    });
+}
