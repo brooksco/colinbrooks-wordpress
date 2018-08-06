@@ -77,8 +77,6 @@ dmmmmmmd+.      hmmmmm:     +dmdo-` .hmmmmmd.
     </nav><!-- #site-navigation -->
 </header><!-- #masthead -->
 
-<?php if (is_page_template('home.php')) { ?>
-    <div id="p5" class="p5"></div>
-<?php } ?>
+<div id="p5" class="p5"></div>
 
 <div id="content" class="site-content">
