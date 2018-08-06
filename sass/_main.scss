@@ -10,15 +10,17 @@
   text-decoration: none;
 }
 
+$hero-spacing: 21vh;
+
 .hero-text {
-  margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
+  //margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
+  margin: #{$hero-spacing * .8} 0 #{$hero-spacing} 0;
 
   p {
     @include fade-in($fade-two);
     font-size: 6vw;
     max-width: 1000px;
     font-weight: 600;
-    //font-family: 'Raleway';
 
     @include xlarge {
       font-size: 5rem;
@@ -31,6 +33,14 @@
     @include small {
       font-size: 10vw;
     }
+  }
+
+  @include medium {
+    margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
+  }
+
+  @include small {
+    margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
   }
 }
 

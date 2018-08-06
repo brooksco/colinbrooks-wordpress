@@ -525,7 +525,7 @@ a {
   text-decoration: none; }
 
 .hero-text {
-  margin: 96px 0 128px 0; }
+  margin: 16.8vh 0 21vh 0; }
   .hero-text p {
     opacity: 0;
     animation: fade-in 200ms ease-out;
@@ -544,6 +544,12 @@ a {
     @media (max-width: 599px) {
       .hero-text p {
         font-size: 10vw; } }
+  @media (min-width: 600px) and (max-width: 899px) {
+    .hero-text {
+      margin: 96px 0 128px 0; } }
+  @media (max-width: 599px) {
+    .hero-text {
+      margin: 96px 0 128px 0; } }
 
 .posts {
   opacity: 0;
