@@ -11,7 +11,8 @@
 }
 
 .hero-text {
-  margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
+  //margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
+  margin: 17vh 0 22vh 0;
 
   p {
     @include fade-in($fade-two);
