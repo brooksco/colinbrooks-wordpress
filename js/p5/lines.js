@@ -1,98 +1,93 @@
-if (window.location.pathname == '/') {
-    let width = window.innerWidth;
-    let height = window.innerHeight;
-    let particles = [];
-    let angle = 0;
-    let minParticles = 200;
-    let maxParticles = minParticles * 2;
-    let particleCount = 0;
-    let strokeAlpha = 64;
-    let isMobile = window.innerWidth < 600;
+if (window.location.pathname == '/' && true) {
+    var p5Lines = new p5(function (p) {
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        let particles = [];
+        let minParticles = 200;
+        let maxParticles = minParticles * 2;
+        let isMobile = window.innerWidth < 600;
 
-    let noiseScale = 100;
+        let noiseScale = 100;
 
-    function startingX() {
-        return random(-(width / 4), width + (width / 4));
-    }
-
-    function startingY() {
-        return random(height);
-    }
-
-    function setup() {
-        const canvas = createCanvas(width, height);
-        canvas.parent('p5');
-
-        frameRate(60);
-
-        minParticles = windowWidth / 5;
-        maxParticles = minParticles * 2;
-
-        for (let i = 0; i < minParticles; i++) {
-            let newParticle = new particle(startingX(), startingY());
-            particles.push(newParticle);
+        function startingX() {
+            return p.random(-(width / 4), width + (width / 4));
         }
 
-        const wrapper = document.querySelector('.p5');
-        if (wrapper) wrapper.classList.add('active');
-    }
-
-
-    function draw() {
-        background(0, 0, 0, 4);
-        noStroke();
-        // stroke(255, 255, 255, 0.1);
-
-        for (let i = 0; i < particles.length; i++) {
-            particles[i].move();
-            particles[i].draw();
+        function startingY() {
+            return p.random(height);
         }
 
-        update();
-    }
+        p.setup = function() {
+            const canvas = p.createCanvas(width, height);
+            canvas.parent('p5');
 
-    function update() {
+            p.frameRate(60);
 
-        if (frameCount % 10 == 0) {
-            if (particles.length < maxParticles) {
+            minParticles = p.windowWidth / 5;
+            maxParticles = minParticles * 2;
+
+            for (let i = 0; i < minParticles; i++) {
                 let newParticle = new particle(startingX(), startingY());
                 particles.push(newParticle);
             }
+
+            const wrapper = document.querySelector('.p5');
+            if (wrapper) wrapper.classList.add('active');
         }
-    }
 
-    function particle(x, y) {
-        this.position = createVector(x, y);
-        this.direction = createVector(random(-1, 1), random(-1, 1));
-        this.speed = 1;
 
-        // noise(this.position.x, this.position.y) * TWO_PI;
+        p.draw = function() {
+            p.background(0, 0, 0, 4);
+            p.noStroke();
 
-        this.move = function () {
-            let angle = noise(this.position.x / noiseScale, this.position.y / noiseScale) * TWO_PI;
-            // let angle =
-            this.direction.x = cos(angle);
-            this.direction.y = sin(angle);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].move();
+                particles[i].draw();
+            }
 
-            this.direction.mult(this.speed);
-            this.position.add(this.direction);
+            update();
+        }
 
-            if (this.position.x > windowWidth || this.position.x < 0 || this.position.y > windowHeight || this.position.y < 0) {
-                this.position = createVector(random(windowWidth), random(windowHeight));
+        function update() {
+
+            if (p.frameCount % 10 == 0) {
+                if (particles.length < maxParticles) {
+                    let newParticle = new particle(startingX(), startingY());
+                    particles.push(newParticle);
+                }
             }
         }
 
-        this.draw = function () {
-            fill(128, 128, 255, 16);
-            ellipse(this.position.x, this.position.y, 2, 2);
+        function particle(x, y) {
+            this.position = p.createVector(x, y);
+            this.direction = p.createVector(p.random(-1, 1), p.random(-1, 1));
+            this.speed = 1;
+
+            this.move = function () {
+                let angle = p.noise(this.position.x / noiseScale, this.position.y / noiseScale) * p.TWO_PI;
+                // let angle =
+                this.direction.x = p.cos(angle);
+                this.direction.y = p.sin(angle);
+
+                this.direction.mult(this.speed);
+                this.position.add(this.direction);
+
+                if (this.position.x > p.windowWidth || this.position.x < 0 || this.position.y > p.windowHeight || this.position.y < 0) {
+                    this.position = p.createVector(p.random(p.windowWidth), p.random(p.windowHeight));
+                }
+            }
+
+            this.draw = function () {
+                p.fill(128, 128, 255, 16);
+                p.ellipse(this.position.x, this.position.y, 2, 2);
+            }
         }
-    }
 
-    function windowResized() {
-        // particleCount = random(0, width / 2);
-        minParticles = windowWidth / 5;
-        maxParticles = minParticles * 2;
+        p.windowResized = function () {
+            minParticles = p.windowWidth / 5;
+            maxParticles = minParticles * 2;
 
-        resizeCanvas(windowWidth, windowHeight);
-    }
+            p.resizeCanvas(p.windowWidth, p.windowHeight);
+        }
+    });
 }
