@@ -17,6 +17,7 @@
     "p5": "*"
   },
   "devDependencies": {
-    "babel-core": "*"
+    "babel-core": "*",
+    "babel-plugin-transform-runtime": "^6.23.0"
   }
 }
