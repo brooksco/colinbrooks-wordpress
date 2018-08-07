@@ -13,8 +13,8 @@
 $hero-spacing: 21vh;
 
 .hero-text {
-  //margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
-  margin: #{$hero-spacing * .8} 0 #{$hero-spacing} 0;
+  margin: #{$spacing-large * 2} 0 #{$spacing-large * 2.5} 0;
+  //margin: #{$hero-spacing * .8} 0 #{$hero-spacing} 0;
 
   p {
     @include fade-in($fade-two);
@@ -35,13 +35,13 @@ $hero-spacing: 21vh;
     }
   }
 
-  @include medium {
-    margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
-  }
-
-  @include small {
-    margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
-  }
+  //@include medium {
+  //  margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
+  //}
+  //
+  //@include small {
+  //  margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
+  //}
 }
 
 // Posts on home
