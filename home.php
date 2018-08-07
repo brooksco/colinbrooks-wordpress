@@ -49,11 +49,11 @@ get_header();
 
                         <a href="<?php echo get_permalink(); ?>">
                             <h3 class="post__title"><?php the_title(); ?></h3>
-                        </a>
 
-                        <div class="post__content">
-                            <?php the_excerpt(); ?>
-                        </div>
+                            <div class="post__content">
+                                <?php the_excerpt(); ?>
+                            </div>
+                        </a>
                     </li>
                 <?php }
             } ?>
