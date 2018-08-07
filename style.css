@@ -525,7 +525,7 @@ a {
   text-decoration: none; }
 
 .hero-text {
-  margin: 128px 0 160px 0; }
+  margin: 128px 0 144px 0; }
   .hero-text p {
     opacity: 0;
     animation: fade-in 200ms ease-out;
