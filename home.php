@@ -29,7 +29,7 @@ get_header();
 
         <?php endwhile; // End of the loop. ?>
 
-        <h2 class="posts__title">Recent work</h2>
+        <h2 class="posts__title">Projects</h2>
 
         <ul class="posts">
             <?php

@@ -1,6 +1,7 @@
 // Main
 .main {
   position: relative;
+  margin-bottom: $spacing-xlarge;
 }
 
 .post-edit-link {
@@ -14,7 +15,6 @@ $hero-spacing: 21vh;
 
 .hero-text {
   margin: #{$spacing-large * 2} 0 #{$spacing-large * 2.25} 0;
-  //margin: #{$hero-spacing * .8} 0 #{$hero-spacing} 0;
 
   p {
     @include fade-in($fade-two);
@@ -80,7 +80,6 @@ $hero-spacing: 21vh;
 }
 
 .post {
-  margin-bottom: $spacing-large;
 
   &__title {
     font-size: 1.25rem;
@@ -125,13 +124,17 @@ $hero-spacing: 21vh;
 .single {
 
   .post {
-    margin-bottom: 0;
 
     p {
       font-size: $font-size-medium;
     }
+  }
 
-    img {
+  .post-thumbnail {
+    max-width: $paragraph-max-width;
+
+    img,
+    .featured-video-plus {
       margin-bottom: 1.5rem;
     }
   }
@@ -150,7 +153,7 @@ $hero-spacing: 21vh;
 
 .posted-on {
   font-weight: $font-weight-heavy;
-  font-size: 1.25rem;
+  font-size: $font-size-small;
 }
 
 canvas {
