@@ -20,7 +20,7 @@ $hero-spacing: 21vh;
     @include fade-in($fade-two);
     font-size: 6vw;
     max-width: 1000px;
-    font-weight: 600;
+    font-weight: $font-weight-heavy;
 
     @include xlarge {
       font-size: 5rem;
@@ -56,10 +56,10 @@ $hero-spacing: 21vh;
 
   &__title {
     @include fade-in($fade-three);
-    font-family: $base-font-family;
+    font-family: $font-family-base;
     font-size: 1.25rem;
-    line-height: $base-line-height;
-    font-weight: $base-font-weight;
+    line-height: $line-height-base;
+    font-weight: $font-weight-heavy;
     margin: $spacing-medium 0;
   }
 
@@ -149,7 +149,7 @@ $hero-spacing: 21vh;
 }
 
 .posted-on {
-  font-weight: 600;
+  font-weight: $font-weight-heavy;
   font-size: 1.25rem;
 }
 

@@ -23,10 +23,11 @@ $color-text-gray: #adadad;
 
 
 // Typography
-$base-font-family: -apple-system, BlinkMacSystemFont, 'Roboto', arial, sans-serif;
-$base-font-size: 16px;
-$base-line-height: 1.4;
-$base-font-weight: 400;
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', arial, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.4;
+$font-weight-base: 400;
+$font-weight-heavy: 600;
 $paragraph-max-width: 800px;
 
 $font-size-small: 1rem;

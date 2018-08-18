@@ -10,7 +10,7 @@ html {
 
 body {
   background: $color-background; /* Fallback for when there is no custom background color defined. */
-  font-size: $base-font-size;
+  font-size: $font-size-base;
   -webkit-font-smoothing: antialiased;
   max-width: calc(#{$max-width} + #{$body-padding * 2});
   margin: auto;
