@@ -57,7 +57,7 @@ $hero-spacing: 21vh;
   &__title {
     @include fade-in($fade-three);
     font-family: $font-family-base;
-    font-size: 1.25rem;
+    font-size: $font-size-medium;
     line-height: $line-height-base;
     font-weight: $font-weight-heavy;
     margin: $spacing-medium 0;

@@ -484,7 +484,8 @@ a {
   justify-content: space-between;
   margin: 64px 0; }
   .header__title {
-    margin: 0; }
+    margin: 0;
+    font-size: 1.5rem; }
     .header__title a {
       text-decoration: none;
       color: inherit; }
@@ -565,7 +566,7 @@ a {
     animation-delay: 150ms;
     position: relative;
     font-family: -apple-system, BlinkMacSystemFont, "Roboto", arial, sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     line-height: 1.4;
     font-weight: 600;
     margin: 32px 0; }
