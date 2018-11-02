@@ -58,7 +58,7 @@ dmmmmmmd+.      hmmmmm:     +dmdo-` .hmmmmmd.
     <?php the_custom_logo(); ?>
     <h2 class="header__title">
         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
-        <?php if (is_front_page()) { ?><br>Digital @ Whitney Museum<?php } ?>
+        <?php if (is_front_page()) { ?><br>Senior Developer @ Whitney Museum<?php } ?>
     </h2>
     <?php
     $colinbooks_description = get_bloginfo('description', 'display');
