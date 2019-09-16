@@ -46,9 +46,9 @@ object {
 .gallery {
 	display: block;
 	opacity: 0;
-	width: calc(100% + #{$body-padding * 2});
-	margin: $spacing-large 0 0 -#{$body-padding};
-	transition: $all-transition;
+	width: calc(100% + var(--body-padding * 2));
+	margin: var(--spacing-large) 0 0 calc(-1 * var(--body-padding));
+	transition: var(--all-transition);
 
 	// &--initial {
 	// 	display: none;
@@ -92,20 +92,17 @@ object {
 	display: block;
 }
 
-// Fancybox overrides
-$fancybox-control-size: 64px;
-
 .fancybox-bg {
-	background: $color-background !important;
+	background: var(--color-background) !important;
 }
 
 .fancybox-button {
 	background: none !important;
-	width: $fancybox-control-size !important;
-	height: $fancybox-control-size !important;
+	width: var(--fancybox-control-size) !important;
+	height: var(--fancybox-control-size) !important;
 }
 
 .fancybox-navigation .fancybox-button {
-	top: calc(50% - #{$fancybox-control-size / 2}) !important;
+	top: calc(50% - var(--fancybox-control-size) / 2) !important;
 }
 
