@@ -646,6 +646,13 @@ a {
   .single .post-thumbnail .featured-video-plus {
     margin-bottom: 1.5rem; }
 
+.entry-meta {
+  opacity: 0;
+  animation: fade-in var(--fade-transition-duration) ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 50ms;
+  position: relative; }
+
 .entry-content a {
   margin-right: var(--spacing-small); }
 
