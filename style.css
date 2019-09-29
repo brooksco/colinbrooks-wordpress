@@ -334,6 +334,7 @@ template {
   --color-gray: #677685;
   --color-text: #ffffff;
   --color-text-gray: #adadad;
+  --color-button-text: #ffffff;
   --color-gradient-start: rgba(0, 0, 0, 0);
   --color-gradient-end: rgba(0, 0, 0, 1);
   --font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', arial, sans-serif;
@@ -502,7 +503,7 @@ button {
 
 .button {
   display: inline-block;
-  color: var(--color-text);
+  color: var(--color-button-text);
   text-align: center;
   padding: .5rem 2rem .6rem 2rem;
   background: var(--color-blue);
