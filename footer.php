@@ -24,11 +24,10 @@
 		<li><a href="https://www.twitter.com/colinbooks" rel="noopener">Twitter</a></li>
 	</ul>
 
-	<div>
+	<div class="footer__wrapper">
 		<a class="footer__email" href="mailto:hello@colinbrooks.co" target="_top">hello@colinbrooks.co</a>
+		<button aria-label="Toggle dark mode" class="footer__color-mode">💡</button>
 	</div>
-
-	<button aria-label="Toggle dark mode" class="footer__color-mode">💡</button>
 </footer>
 
 <?php wp_footer(); ?>

@@ -364,6 +364,7 @@ template {
 .light {
   --color-background: #ffffff;
   --color-text: #000000;
+  --color-text-gray: #808080;
   --color-gradient-start: rgba(255, 255, 255, 0);
   --color-gradient-end: rgba(255, 255, 255, 1); }
   .light .footer__color-mode:hover, .light .footer__color-mode:active {
@@ -514,11 +515,8 @@ button {
     background: var(--color-red-pink); }
 
 .footer {
-  display: grid;
-  grid-template-columns: 1fr auto;
   margin: var(--spacing-large) 0; }
   .footer__links {
-    grid-column: 1 / span 2;
     display: flex;
     list-style: none;
     margin: var(--spacing-small) 0;
@@ -530,21 +528,22 @@ button {
         margin-right: var(--spacing-small);
         text-decoration: none;
         color: var(--color-text); }
+  .footer__wrapper {
+    display: flex;
+    align-items: center; }
   .footer__email {
-    display: inline-flex;
-    align-items: center;
     color: var(--color-text);
     text-decoration: none;
     color: var(--color-text-gray); }
   .footer__color-mode {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    display: inline-flex;
     background: none;
     border: none;
     cursor: pointer;
     outline: none;
-    margin: 0;
+    margin: 0 0 0 var(--spacing-small);
+    position: relative;
+    top: 3px;
     font-size: 1.5rem; }
     .footer__color-mode:hover, .footer__color-mode:active {
       filter: brightness(150%);

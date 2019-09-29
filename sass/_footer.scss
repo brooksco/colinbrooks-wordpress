@@ -1,11 +1,7 @@
 .footer {
-	display: grid;
-	grid-template-columns: 1fr auto;
-
 	margin: var(--spacing-large) 0;
 
 	&__links {
-		grid-column: 1 / span 2;
 		display: flex;
 		list-style: none;
 		margin: var(--spacing-small) 0;
@@ -24,30 +20,32 @@
 		}
 	}
 
-	&__email {
-		display: inline-flex;
+	&__wrapper {
+		display: flex;
 		align-items: center;
+	}
+
+	&__email {
 		color: var(--color-text);
 		text-decoration: none;
-		 //font-size: #{var(--font-size-small) * .75};
 		color: var(--color-text-gray);
 	}
 
 	&__color-mode {
-		display: flex;
-		align-items: center;
-		justify-content: flex-end;
+		display: inline-flex;
 		background: none;
 		border: none;
 		cursor: pointer;
-  		outline: none;
-    	margin: 0;
-    	font-size: 1.5rem;
+		outline: none;
+		margin: 0 0 0 var(--spacing-small);
+		position: relative;
+		top: 3px; // Helps to visually align with nearby text
+		font-size: 1.5rem;
 
-    	&:hover,
-    	&:active {
-    		filter: brightness(150%);
-    		opacity: 1;
-    	}
+		&:hover,
+		&:active {
+			filter: brightness(150%);
+			opacity: 1;
+		}
 	}
 }
