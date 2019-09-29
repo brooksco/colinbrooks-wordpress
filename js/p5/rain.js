@@ -1,7 +1,7 @@
 // Rain
 if (window.location.pathname.startsWith('/about')) {
     $(document).ready(function () {
-        var p5Rain = new p5(function (p) {
+        const p5Rain = new p5(function (p) {
             let width = window.innerWidth;
             let height = window.innerHeight;
             let drops = [];
@@ -52,8 +52,16 @@ if (window.location.pathname.startsWith('/about')) {
 
 
             p.draw = function () {
-                p.background(0);
-                p.stroke(255, 255, 255, strokeAlpha);
+                if (window.colorMode == 'light') {
+                    p.background(255);
+                    p.stroke(0, 0, 0, strokeAlpha);
+                } else {
+                    p.background(0);
+                    p.stroke(255, 255, 255, strokeAlpha);
+                }
+
+                // p.background(0);
+                // p.stroke(255, 255, 255, strokeAlpha);
 
                 for (let i = 0; i < drops.length; i++) {
                     const tailX = drops[i].tail * p.sin(-angle) + drops[i].x;
@@ -79,10 +87,11 @@ if (window.location.pathname.startsWith('/about')) {
             }
 
             p.windowResized = function () {
-                // Don't run on height changes because realistically it's mobile and the navbar moving
-                let currentWidth = window.innerWidth;
-                // If the width changed...
-                if (width != currentWidth) {
+                // Don't run on small height changes because realistically it's mobile and the navbar moving
+                const currentWidth = window.innerWidth;
+                const currentHeight = window.innerHeight;
+                // If the width or height (larger) changed...
+                if ((width != currentWidth) || (currentHeight > height + 128)) {
                     width = currentWidth;
                     height = window.innerHeight;
 

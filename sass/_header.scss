@@ -2,11 +2,11 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin: $spacing-large 0;
+  margin: var(--spacing-large) 0;
 
   &__title {
     margin: 0;
-    font-size: $font-size-medium;
+    font-size: var(--font-size-medium);
 
     a {
       text-decoration: none;
@@ -14,13 +14,13 @@
     }
 
     @include small {
-      margin-bottom: $spacing-small;
+      margin-bottom: var(--spacing-small);
     }
   }
 
   @include small {
     flex-direction: column;
-    margin: $spacing-medium 0;
+    margin: var(--spacing-medium) 0;
   }
 }
 
@@ -37,11 +37,11 @@
     padding-left: 0;
 
     li {
-      margin: 0 0 0 $spacing-small;
+      margin: 0 0 0 var(--spacing-small);
 
       a {
         text-decoration: none;
-        color: $color-text;
+        color: var(--color-text);
         //font-size: 1.25rem;
       }
     }
@@ -52,7 +52,7 @@
     ul {
 
       li {
-        margin: 0 $spacing-small 0 0;
+        margin: 0 var(--spacing-small) 0 0;
       }
     }
   }

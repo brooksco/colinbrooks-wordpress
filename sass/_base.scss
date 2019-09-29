@@ -9,15 +9,15 @@ html {
 }
 
 body {
-  background: $color-background; /* Fallback for when there is no custom background color defined. */
-  font-size: $font-size-base;
+  background: var(--color-background); /* Fallback for when there is no custom background color defined. */
+  font-size: var(--font-size-base);
   -webkit-font-smoothing: antialiased;
-  max-width: calc(#{$max-width} + #{$body-padding * 2});
+  max-width: calc(var(--max-width) + var(--body-padding) * 2);
   margin: auto;
-  padding: 0 $body-padding;
+  padding: 0 var(--body-padding);
 
   //&.template-photography {
-  //  background: $color-gray;
+  //  background: var(--color-gray);
   //}
   //
   //&:not(.template-photography):not(.template-home) {
@@ -29,7 +29,7 @@ body {
 }
 
 hr {
-  background-color: $color-background-hr;
+  background-color: var(--color-background-hr);
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -77,12 +77,21 @@ table {
 }
 
 a {
-  color: $color-blue;
-  transition: $all-transition;
+  color: var(--color-blue);
+  transition: var(--all-transition);
 
   &:hover,
   &:active {
-    opacity: .75;
+    opacity: var(--hover-opacity);
+  }
+}
+
+button {
+  transition: var(--all-transition);
+
+  &:hover,
+  &:active {
+    opacity: var(--hover-opacity);
   }
 }
 

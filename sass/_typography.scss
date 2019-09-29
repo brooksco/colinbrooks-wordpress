@@ -7,10 +7,11 @@ input,
 select,
 optgroup,
 textarea {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $color-text;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  // transition: var(--all-transition);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,10 +31,10 @@ h1 {
 }
 
 p {
-  font-size: $font-size-medium;
+  font-size: var(--font-size-medium);
   font-weight: 400;
   margin: 0 0 1.5rem 0;
-  max-width: $paragraph-max-width;
+  max-width: var(--paragraph-max-width);
 }
 
 dfn, cite, em, i {

@@ -43,12 +43,13 @@ object {
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
-.gallery {
+.gallery,
+.wp-block-gallery {
 	display: block;
 	opacity: 0;
-	width: calc(100% + #{$body-padding * 2});
-	margin: $spacing-large 0 0 -#{$body-padding};
-	transition: $all-transition;
+	width: calc(100% + (var(--body-padding) * 2));
+	margin: var(--spacing-large) 0 0 calc(-1 * var(--body-padding));
+	transition: var(--all-transition);
 
 	// &--initial {
 	// 	display: none;
@@ -74,7 +75,9 @@ object {
 	}
 }
 
-.gallery-item {
+// Specificity is a mess with the blocks gallery
+.gallery-item,
+.main .wp-block-gallery .blocks-gallery-item {
 	display: block;
 	margin: 0;
 	width: 33.33%;
@@ -92,20 +95,22 @@ object {
 	display: block;
 }
 
-// Fancybox overrides
-$fancybox-control-size: 64px;
-
 .fancybox-bg {
-	background: $color-background !important;
+	background: var(--color-background) !important;
 }
 
 .fancybox-button {
 	background: none !important;
-	width: $fancybox-control-size !important;
-	height: $fancybox-control-size !important;
+	width: calc(var(--fancybox-control-size) + var(--spacing-tiny)) !important;
+	height: calc(var(--fancybox-control-size) + var(--spacing-tiny)) !important;
+	padding: var(--spacing-tiny) !important;
+
+	div {
+		padding: 0 !important;
+	}
 }
 
 .fancybox-navigation .fancybox-button {
-	top: calc(50% - #{$fancybox-control-size / 2}) !important;
+	top: calc(50% - var(--fancybox-control-size) / 2) !important;
 }
 

@@ -1,29 +1,51 @@
 .footer {
-	margin: $spacing-large 0;
+	margin: var(--spacing-large) 0;
 
 	&__links {
 		display: flex;
 		list-style: none;
-		margin: $spacing-small 0;
+		margin: var(--spacing-small) 0;
 		padding-left: 0;
 		flex-wrap: wrap;
 
 		li {
-			padding: $spacing-small 0;
+			padding: var(--spacing-small) 0;
 
 			a {
-				// padding: $spacing-small;
-				margin-right: $spacing-small;
+				// padding: var(--spacing-small);
+				margin-right: var(--spacing-small);
 				text-decoration: none;
-				color: $color-text;
+				color: var(--color-text);
 			}
 		}
 	}
 
+	&__wrapper {
+		display: flex;
+		align-items: center;
+	}
+
 	&__email {
-		color: $color-text;
+		color: var(--color-text);
 		text-decoration: none;
-		 //font-size: #{$font-size-small * .75};
-		color: $color-text-gray;
+		color: var(--color-text-gray);
+	}
+
+	&__color-mode {
+		display: inline-flex;
+		background: none;
+		border: none;
+		cursor: pointer;
+		outline: none;
+		margin: 0 0 0 var(--spacing-small);
+		position: relative;
+		top: 3px; // Helps to visually align with nearby text
+		font-size: 1.5rem;
+
+		&:hover,
+		&:active {
+			filter: brightness(150%);
+			opacity: 1;
+		}
 	}
 }

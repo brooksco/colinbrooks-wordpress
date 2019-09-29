@@ -1,7 +1,7 @@
 // Lines (Perlin)
 if (window.location.pathname == '/') {
     $(document).ready(function () {
-        var p5Lines = new p5(function (p) {
+        const p5Lines = new p5(function (p) {
             let width = window.innerWidth;
             let height = window.innerHeight;
             let particles = [];
@@ -9,7 +9,7 @@ if (window.location.pathname == '/') {
             let maxParticles = 0;
 
             let noiseScale = 200;
-            let fillAlpha = 32;
+            let fillAlpha = window.colorMode == 'light' ? 64 : 32;
             let backgroundAlpha = 8;
 
             function startingX() {
@@ -30,7 +30,7 @@ if (window.location.pathname == '/') {
                 maxParticles = minParticles * 2;
 
                 for (let i = 0; i < minParticles; i++) {
-                    let newParticle = new particle(startingX(), startingY());
+                    const newParticle = new particle(startingX(), startingY());
                     particles.push(newParticle);
                 }
 
@@ -40,7 +40,12 @@ if (window.location.pathname == '/') {
 
 
             p.draw = function () {
-                p.background(0, 0, 0, backgroundAlpha);
+                if (window.colorMode == 'light') {
+                    p.background(255, 255, 255, backgroundAlpha);
+                } else {
+                    p.background(0, 0, 0, backgroundAlpha);
+                }
+
                 p.noStroke();
 
                 for (let i = 0; i < particles.length; i++) {
@@ -55,7 +60,7 @@ if (window.location.pathname == '/') {
 
                 if (p.frameCount % 2 == 0) {
                     if (particles.length < maxParticles) {
-                        let newParticle = new particle(startingX(), startingY());
+                        const newParticle = new particle(startingX(), startingY());
                         particles.push(newParticle);
                     }
                 }
@@ -67,7 +72,7 @@ if (window.location.pathname == '/') {
                 this.speed = 1;
 
                 this.move = function () {
-                    let angle = p.noise(this.position.x / noiseScale, this.position.y / noiseScale) * p.TWO_PI;
+                    const angle = p.noise(this.position.x / noiseScale, this.position.y / noiseScale) * p.TWO_PI;
                     this.direction.x = p.cos(angle);
                     this.direction.y = p.sin(angle);
 
@@ -86,10 +91,12 @@ if (window.location.pathname == '/') {
             }
 
             p.windowResized = function () {
-                // Don't run on height changes because realistically it's mobile and the navbar moving
-                let currentWidth = window.innerWidth;
-                // If the width changed...
-                if (width != currentWidth) {
+                // Don't run on small height changes because realistically it's mobile and the navbar moving
+                const currentWidth = window.innerWidth;
+                const currentHeight = window.innerHeight;
+                // If the width or height (larger) changed...
+                if ((width != currentWidth) || (currentHeight > height + 128)) {
+
                     width = currentWidth;
                     height = window.innerHeight;
 

@@ -1,26 +1,24 @@
 // Main
 .main {
   position: relative;
-  margin-bottom: $spacing-xlarge;
+  margin-bottom: var(--spacing-xlarge);
 }
 
 .post-edit-link {
   position: fixed;
-  bottom: $spacing-small;
-  right: $spacing-small;
+  bottom: var(--spacing-small);
+  right: var(--spacing-small);
   text-decoration: none;
 }
 
-$hero-spacing: 21vh;
-
 .hero-text {
-  margin: #{$spacing-large * 2} 0 #{$spacing-large * 2.25} 0;
+  margin: calc(var(--spacing-large) * 2) 0 calc(var(--spacing-large) * 2.25) 0;
 
   p {
     @include fade-in($fade-two);
     font-size: 6vw;
     max-width: 1000px;
-    font-weight: $font-weight-heavy;
+    font-weight: var(--font-weight-heavy);
 
     @include xlarge {
       font-size: 5rem;
@@ -36,11 +34,11 @@ $hero-spacing: 21vh;
   }
 
   //@include medium {
-  //  margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
+  //  margin: #{var(--spacing-large) * 1.5} 0 var(--spacing-xlarge) 0;
   //}
   //
   //@include small {
-  //  margin: #{$spacing-large * 1.5} 0 $spacing-xlarge 0;
+  //  margin: #{var(--spacing-large) * 1.5} 0 var(--spacing-xlarge) 0;
   //}
 }
 
@@ -52,15 +50,15 @@ $hero-spacing: 21vh;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: $spacing-medium;
+  grid-column-gap: var(--spacing-medium);
 
   &__title {
     @include fade-in($fade-three);
-    font-family: $font-family-base;
-    font-size: $font-size-medium;
-    line-height: $line-height-base;
-    font-weight: $font-weight-heavy;
-    margin: $spacing-medium 0;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-medium);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-heavy);
+    margin: var(--spacing-medium) 0;
   }
 
   @include medium {
@@ -73,14 +71,14 @@ $hero-spacing: 21vh;
     img,
     .featured-video-plus {
       margin-left: -8vw;
-      width: calc(100% + #{$body-padding * 2});
+      width: calc(100% + var(--body-padding) * 2);
       max-width: none;
     }
   }
 }
 
 .post {
-  margin-bottom: $spacing-large;
+  margin-bottom: var(--spacing-large);
 
   &__title {
     font-size: 1.25rem;
@@ -102,17 +100,17 @@ $hero-spacing: 21vh;
   }
 
   h1 {
-    font-size: $font-size-xlarge;
+    font-size: var(--font-size-xlarge);
   }
 
   a {
     display: block;
-    color: $color-text;
+    color: var(--color-text);
     text-decoration: none;
   }
 
   p {
-    font-size: $font-size-small;
+    font-size: var(--font-size-small);
   }
 
   img,
@@ -127,12 +125,12 @@ $hero-spacing: 21vh;
   .post {
 
     p {
-      font-size: $font-size-medium;
+      font-size: var(--font-size-medium);
     }
   }
 
   .post-thumbnail {
-    max-width: $paragraph-max-width;
+    max-width: var(--paragraph-max-width);
 
     img,
     .featured-video-plus {
@@ -141,10 +139,14 @@ $hero-spacing: 21vh;
   }
 }
 
+.entry-meta {
+  @include fade-in($fade-one);
+}
+
 .entry-content {
 
   a {
-    margin-right: $spacing-small;
+    margin-right: var(--spacing-small);
   }
 
   p {
@@ -153,8 +155,8 @@ $hero-spacing: 21vh;
 }
 
 .posted-on {
-  font-weight: $font-weight-heavy;
-  font-size: $font-size-small;
+  font-weight: var(--font-weight-heavy);
+  font-size: var(--font-size-small);
 }
 
 canvas {
@@ -188,8 +190,8 @@ canvas {
     left: 0;
     pointer-events: none;
     background-image: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0),
-            rgba(0, 0, 0, 1) 100%);
+            var(--color-gradient-start),
+            var(--color-gradient-end) 100%);
     width: 100%;
     height: 33.33%;
   }

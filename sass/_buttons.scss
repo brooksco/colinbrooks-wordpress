@@ -1,17 +1,16 @@
 .button {
   display: inline-block;
-  color: $color-text;
+  color: var(--color-text);
   text-align: center;
   padding: .5rem 2rem .6rem 2rem;
-  background: $color-blue;
-  margin: $spacing-small $spacing-small $spacing-small 0;
-  border-radius: $spacing-medium;
-  transition: $all-transition;
+  background: var(--color-blue);
+  margin: var(--spacing-small) var(--spacing-small) var(--spacing-small) 0;
+  border-radius: var(--spacing-medium);
+  transition: var(--all-transition);
   text-decoration: none;
-  font-size: $font-size-small;
+  font-size: var(--font-size-small);
 
   &--secondary {
-    background: $color-red-pink;
+    background: var(--color-red-pink);
   }
 }
-
