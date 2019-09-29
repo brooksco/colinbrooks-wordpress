@@ -82,7 +82,16 @@ a {
 
   &:hover,
   &:active {
-    opacity: .75;
+    opacity: var(--hover-opacity);
+  }
+}
+
+button {
+  transition: var(--all-transition);
+
+  &:hover,
+  &:active {
+    opacity: var(--hover-opacity);
   }
 }
 

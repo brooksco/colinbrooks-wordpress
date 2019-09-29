@@ -1,6 +1,7 @@
 .footer {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr auto;
+
 	margin: var(--spacing-large) 0;
 
 	&__links {
@@ -24,7 +25,7 @@
 	}
 
 	&__email {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		color: var(--color-text);
 		text-decoration: none;
@@ -42,5 +43,11 @@
   		outline: none;
     	margin: 0;
     	font-size: 1.5rem;
+
+    	&:hover,
+    	&:active {
+    		filter: brightness(150%);
+    		opacity: 1;
+    	}
 	}
 }

@@ -358,6 +358,7 @@ template {
   --body-padding: 8vw;
   --all-transition: all 200ms ease-out;
   --fade-transition-duration: 200ms;
+  --hover-opacity: .75;
   --fancybox-control-size: 64px; }
 
 .light {
@@ -365,6 +366,9 @@ template {
   --color-text: #000000;
   --color-gradient-start: rgba(255, 255, 255, 0);
   --color-gradient-end: rgba(255, 255, 255, 1); }
+  .light .footer__color-mode:hover, .light .footer__color-mode:active {
+    filter: brightness(75%);
+    opacity: 1; }
 
 @keyframes fade-in {
   0% {
@@ -480,7 +484,12 @@ a {
   color: var(--color-blue);
   transition: var(--all-transition); }
   a:hover, a:active {
-    opacity: .75; }
+    opacity: var(--hover-opacity); }
+
+button {
+  transition: var(--all-transition); }
+  button:hover, button:active {
+    opacity: var(--hover-opacity); }
 
 @keyframes gradient {
   0% {
@@ -506,7 +515,7 @@ a {
 
 .footer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   margin: var(--spacing-large) 0; }
   .footer__links {
     grid-column: 1 / span 2;
@@ -522,7 +531,7 @@ a {
         text-decoration: none;
         color: var(--color-text); }
   .footer__email {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     color: var(--color-text);
     text-decoration: none;
@@ -537,6 +546,9 @@ a {
     outline: none;
     margin: 0;
     font-size: 1.5rem; }
+    .footer__color-mode:hover, .footer__color-mode:active {
+      filter: brightness(150%);
+      opacity: 1; }
 
 .header {
   display: flex;

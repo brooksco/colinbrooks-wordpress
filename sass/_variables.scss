@@ -55,6 +55,7 @@ $xlarge-min-width: 1200px;
 	// Transitions
 	--all-transition: all 200ms ease-out;
 	--fade-transition-duration: 200ms;
+	--hover-opacity: .75;
 
 	// Fancybox overrides
 	--fancybox-control-size: 64px;
@@ -68,6 +69,14 @@ $xlarge-min-width: 1200px;
 	// Blends animation into background
 	--color-gradient-start: rgba(255, 255, 255, 0);
 	--color-gradient-end: rgba(255, 255, 255, 1);
+
+	.footer__color-mode {
+		&:hover,
+		&:active {
+			filter: brightness(75%);
+			opacity: 1;
+		}
+	}
 }
 
 // @media (prefers-color-scheme: light) {
