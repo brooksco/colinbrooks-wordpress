@@ -1,11 +1,24 @@
 $.fancybox.defaults.buttons = [
-'close'
+	'close'
 ];
 
 $.fancybox.defaults.infobar = false;
 
+// $('.blocks-gallery-item img').fancybox({
+// 	type: 'image'
+// 	// Options will go here
+// });
+
+$('.wp-block-gallery .blocks-gallery-item a').fancybox().attr('data-fancybox', 'gallery');
+
 const $gallery = $('.gallery').isotope({
 	itemSelector: '.gallery-item',
+	percentPosition: true,
+});
+
+// Some other kind of gallery gets made now?
+const $galleryBlock = $('.wp-block-gallery').isotope({
+	itemSelector: '.blocks-gallery-item',
 	percentPosition: true,
 });
 
@@ -13,12 +26,18 @@ $gallery.one('arrangeComplete', function () {
 	$gallery.addClass('active');
 });
 
+$galleryBlock.one('arrangeComplete', function () {
+	$galleryBlock.addClass('active');
+});
+
 $(document).ready(function () {
 	$gallery.isotope();
+	$galleryBlock.isotope();
 });
 
 $(window).on('load', function () {
 	$gallery.isotope();
+	$galleryBlock.isotope();
 });
 
 // Setup color mode handling

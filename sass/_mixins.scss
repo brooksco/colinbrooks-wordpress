@@ -29,25 +29,25 @@
 }
 
 @mixin small {
-  @media (max-width: calc(var(--medium-min-width) - 1px)) {
-    @content;
-  }
+	@media (max-width: calc(#{$medium-min-width} - 1px)) {
+		@content;
+	}
 }
 
 @mixin medium {
-  @media (min-width: var(--medium-min-width)) and (max-width: calc(var(--large-min-width) - 1px)) {
-    @content;
-  }
+	@media (min-width: $medium-min-width) and (max-width: calc(#{$large-min-width} - 1px)) {
+		@content;
+	}
 }
 
 @mixin large {
-  @media (min-width: var(--large-min-width)) {
-    @content;
-  }
+	@media (min-width: $large-min-width) {
+		@content;
+	}
 }
 
 @mixin xlarge {
-	@media (min-width: var(--xlarge-min-width)) {
+	@media (min-width: $xlarge-min-width) {
 		@content;
 	}
 }

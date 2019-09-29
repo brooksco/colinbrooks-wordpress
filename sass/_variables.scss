@@ -1,5 +1,9 @@
 // Variables
 
+$medium-min-width: 600px;
+$large-min-width: 900px;
+$xlarge-min-width: 1200px;
+
 :root {
 	// Colors
 	--color-background: #000;
@@ -35,10 +39,11 @@
 	--font-size-xlarge: 4rem;
 
 	// Layout
-	--medium-min-width: 600px;
-	--large-min-width: 900px;
-	--xlarge-min-width: 1200px;
+	--medium-min-width: $medium-min-width;
+	--large-min-width: $large-min-width;
+	--xlarge-min-width: $xlarge-min-width;
 
+	--spacing-tiny: 8px;
 	--spacing-small: 16px;
 	--spacing-medium: 32px;
 	--spacing-large: 64px;
