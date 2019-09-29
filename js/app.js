@@ -68,14 +68,11 @@ function setColorMode(mode) {
 window.colorMode = 'dark';
 document.addEventListener('DOMContentLoaded', function() {
 	const previousColorMode = sessionStorage.getItem('colorMode');
-	if (previousColorMode) {
-		setColorMode(previousColorMode);
-	}
+	if (previousColorMode) setColorMode(previousColorMode);
 
 	const colorModeEl = document.querySelector('.footer__color-mode');
 	if (colorModeEl) colorModeEl.addEventListener('click', function() {
 		const newColorMode = window.colorMode == 'dark' ? 'light' : 'dark';
-		console.log('new color mode', newColorMode);
 		setColorMode(newColorMode);
 	});
 });
