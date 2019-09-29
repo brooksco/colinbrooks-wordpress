@@ -1,7 +1,10 @@
 .footer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	margin: var(--spacing-large) 0;
 
 	&__links {
+		grid-column: 1 / span 2;
 		display: flex;
 		list-style: none;
 		margin: var(--spacing-small) 0;
@@ -21,9 +24,23 @@
 	}
 
 	&__email {
+		display: flex;
+		align-items: center;
 		color: var(--color-text);
 		text-decoration: none;
 		 //font-size: #{var(--font-size-small) * .75};
 		color: var(--color-text-gray);
+	}
+
+	&__color-mode {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		background: none;
+		border: none;
+		cursor: pointer;
+  		outline: none;
+    	margin: 0;
+    	font-size: 1.5rem;
 	}
 }

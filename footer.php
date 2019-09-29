@@ -25,6 +25,8 @@
 	</ul>
 
 	<a class="footer__email" href="mailto:hello@colinbrooks.co" target="_top">hello@colinbrooks.co</a>
+
+	<button aria-label="Toggle dark mode" class="footer__color-mode">💡</button>
 </footer>
 
 <?php wp_footer(); ?>

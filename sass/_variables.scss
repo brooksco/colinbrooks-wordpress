@@ -17,6 +17,10 @@
 	--color-text: #ffffff;
 	--color-text-gray: #adadad;
 
+	// Blends animation into background
+	--color-gradient-start: rgba(0, 0, 0, 0);
+	--color-gradient-end: rgba(0, 0, 0, 1);
+
 	// Typography
 	--font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', arial, sans-serif;
 	--font-size-base: 16px;
@@ -50,6 +54,28 @@
 	// Fancybox overrides
 	--fancybox-control-size: 64px;
 }
+
+.light {
+	// Colors
+	--color-background: #ffffff;
+	--color-text: #000000;
+
+	// Blends animation into background
+	--color-gradient-start: rgba(255, 255, 255, 0);
+	--color-gradient-end: rgba(255, 255, 255, 1);
+}
+
+// @media (prefers-color-scheme: light) {
+// 	:root {
+// 		// Colors
+// 		--color-background: #ffffff;
+// 		--color-text: #000000;
+
+// 		// Blends animation into background
+// 		--color-gradient-start: rgba(255, 255, 255, 0);
+// 		--color-gradient-end: rgba(255, 255, 255, 1);
+// 	}
+// }
 
 $columns: (
 	1: 100%,

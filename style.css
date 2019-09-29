@@ -333,6 +333,8 @@ template {
   --color-gray: #677685;
   --color-text: #ffffff;
   --color-text-gray: #adadad;
+  --color-gradient-start: rgba(0, 0, 0, 0);
+  --color-gradient-end: rgba(0, 0, 0, 1);
   --font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', arial, sans-serif;
   --font-size-base: 16px;
   --line-height-base: 1.4;
@@ -355,6 +357,12 @@ template {
   --all-transition: all 200ms ease-out;
   --fade-transition-duration: 200ms;
   --fancybox-control-size: 64px; }
+
+.light {
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-gradient-start: rgba(255, 255, 255, 0);
+  --color-gradient-end: rgba(255, 255, 255, 1); }
 
 @keyframes fade-in {
   0% {
@@ -495,8 +503,11 @@ a {
     background: var(--color-red-pink); }
 
 .footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin: var(--spacing-large) 0; }
   .footer__links {
+    grid-column: 1 / span 2;
     display: flex;
     list-style: none;
     margin: var(--spacing-small) 0;
@@ -509,9 +520,21 @@ a {
         text-decoration: none;
         color: var(--color-text); }
   .footer__email {
+    display: flex;
+    align-items: center;
     color: var(--color-text);
     text-decoration: none;
     color: var(--color-text-gray); }
+  .footer__color-mode {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin: 0;
+    font-size: 1.5rem; }
 
 .header {
   display: flex;
@@ -690,7 +713,7 @@ canvas {
     bottom: 0;
     left: 0;
     pointer-events: none;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), black 100%);
+    background-image: linear-gradient(to bottom, var(--color-gradient-start), var(--color-gradient-end) 100%);
     width: 100%;
     height: 33.33%; }
 
