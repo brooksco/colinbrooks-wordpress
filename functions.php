@@ -125,7 +125,7 @@ function colinbooks_scripts() {
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), null, true);
 
-    wp_enqueue_script('colinbooks-app', get_template_directory_uri() . '/js/app.min.js', array(), '20151215', true);
+    wp_enqueue_script('colinbooks-app', get_template_directory_uri() . '/js/app.min.js', array(), '20200322', true);
 }
 
 add_action('wp_enqueue_scripts', 'colinbooks_scripts');
