@@ -358,6 +358,7 @@ template {
   --max-width: 1200px;
   --body-padding: 8vw;
   --all-transition: all 200ms ease-out;
+  --all-transition--fast: all 100ms ease-out;
   --fade-transition-duration: 200ms;
   --hover-opacity: .75;
   --fancybox-control-size: 64px; }
@@ -503,17 +504,23 @@ button {
 
 .button {
   display: inline-block;
+  position: relative;
+  bottom: 0;
   color: var(--color-button-text);
   text-align: center;
   padding: .5rem 2rem .6rem 2rem;
   background: var(--color-blue);
   margin: var(--spacing-small) var(--spacing-small) var(--spacing-small) 0;
   border-radius: var(--spacing-medium);
-  transition: var(--all-transition);
+  transition: var(--all-transition--fast);
   text-decoration: none;
-  font-size: var(--font-size-small); }
+  font-size: var(--font-size-small);
+  font-weight: 600; }
   .button--secondary {
     background: var(--color-red-pink); }
+  .button:hover {
+    opacity: 1;
+    bottom: .1rem; }
 
 .footer {
   margin: var(--spacing-large) 0; }
