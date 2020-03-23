@@ -673,6 +673,10 @@ button {
   .post .featured-video-plus {
     margin-bottom: 1rem;
     border-radius: .25rem; }
+    @media (max-width: calc(600px - 1px)) {
+      .post img,
+      .post .featured-video-plus {
+        border-radius: 0; } }
 
 .single .post p {
   font-size: var(--font-size-medium); }

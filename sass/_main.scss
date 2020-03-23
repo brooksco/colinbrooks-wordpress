@@ -141,6 +141,10 @@
   .featured-video-plus {
     margin-bottom: 1rem;
     border-radius: .25rem;
+
+    @include small {
+      border-radius: 0;
+    }
   }
 }
 
