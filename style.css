@@ -654,14 +654,13 @@ button {
         max-width: none; } }
 
 .post {
+  position: relative;
   margin-bottom: var(--spacing-large); }
   .post__title {
     font-size: 1.25rem;
     margin-bottom: .5rem; }
   .post__content a {
     text-decoration: underline !important; }
-  .post__thumb:hover {
-    opacity: 1; }
   .post h1 {
     font-size: var(--font-size-xlarge); }
   .post a {
@@ -672,7 +671,8 @@ button {
     font-size: var(--font-size-small); }
   .post img,
   .post .featured-video-plus {
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    border-radius: .25rem; }
 
 .single .post p {
   font-size: var(--font-size-medium); }
