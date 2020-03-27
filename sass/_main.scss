@@ -50,7 +50,7 @@
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: var(--spacing-medium);
+  grid-column-gap: var(--spacing-large);
 
   &__title {
     @include fade-in($fade-three);
@@ -140,7 +140,7 @@
   img,
   .featured-video-plus {
     margin-bottom: 1rem;
-    border-radius: .25rem;
+    border-radius: .15rem;
 
     @include small {
       border-radius: 0;

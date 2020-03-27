@@ -636,7 +636,7 @@ button {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: var(--spacing-medium); }
+  grid-column-gap: var(--spacing-large); }
   .posts__title {
     opacity: 0;
     animation: fade-in var(--fade-transition-duration) ease-out;
@@ -679,7 +679,7 @@ button {
   .post img,
   .post .featured-video-plus {
     margin-bottom: 1rem;
-    border-radius: .25rem; }
+    border-radius: .15rem; }
     @media (max-width: calc(600px - 1px)) {
       .post img,
       .post .featured-video-plus {
