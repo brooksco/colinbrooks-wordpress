@@ -8,8 +8,9 @@ if (window.location.pathname == '/') {
             let minParticles = 0;
             let maxParticles = 0;
             let noiseScale = 200;
-            let fillAlpha = window.colorMode == 'light' ? 64 : 48;
-            let backgroundAlpha = 6;
+            // Not light is default
+            let fillAlpha = window.colorMode == 'light' ? 32 : 48;
+            let backgroundAlpha = window.colorMode == 'light' ? 10 : 6;
             
             function startingX() {
                 return p.random(-(width / 4), width + (width / 4));
