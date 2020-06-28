@@ -1,227 +1,162 @@
 // Main
 .main {
-  position: relative;
-  margin-bottom: var(--spacing-xlarge);
+    position: relative;
+    margin-bottom: var(--spacing-xlarge);
 }
 
 .post-edit-link {
-  position: fixed;
-  bottom: var(--spacing-small);
-  right: var(--spacing-small);
-  text-decoration: none;
+    position: fixed;
+    bottom: var(--spacing-small);
+    right: var(--spacing-small);
+    text-decoration: none;
 }
 
 .hero-text {
-  margin: calc(var(--spacing-large) * 2) 0 calc(var(--spacing-large) * 2.25) 0;
-
-  p {
-    @include fade-in($fade-two);
-    font-size: 6vw;
-    max-width: 1000px;
-    font-weight: var(--font-weight-heavy);
-
-    @include xlarge {
-      font-size: 5rem;
+    margin: calc(var(--spacing-large) * 2) 0 calc(var(--spacing-large) * 2.25) 0;
+    p {
+        @include fade-in($fade-two);
+        font-size: 6vw;
+        max-width: 1000px;
+        font-weight: var(--font-weight-heavy);
+        @include xlarge {
+            font-size: 5rem;
+        }
+        @include medium {
+            font-size: 8vw;
+        }
+        @include small {
+            font-size: 10vw;
+        }
     }
-
-    @include medium {
-      font-size: 8vw;
-    }
-
-    @include small {
-      font-size: 10vw;
-    }
-  }
-
-  //@include medium {
-  //  margin: #{var(--spacing-large) * 1.5} 0 var(--spacing-xlarge) 0;
-  //}
-  //
-  //@include small {
-  //  margin: #{var(--spacing-large) * 1.5} 0 var(--spacing-xlarge) 0;
-  //}
 }
 
 // Posts on home
 .posts {
-  @include fade-in($fade-three);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: var(--spacing-large);
-
-  &__title {
     @include fade-in($fade-three);
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-medium);
-    line-height: var(--line-height-base);
-    font-weight: var(--font-weight-heavy);
-    margin: var(--spacing-medium) 0;
-  }
-
-  @include medium {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @include small {
-    grid-template-columns: 1fr;
-
-    img,
-    .featured-video-plus {
-      margin-left: -8vw;
-      width: calc(100% + var(--body-padding) * 2);
-      max-width: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: var(--spacing-large);
+    &__title {
+        @include fade-in($fade-three);
+        font-family: var(--font-family-base);
+        font-size: var(--font-size-medium);
+        line-height: var(--line-height-base);
+        font-weight: var(--font-weight-heavy);
+        margin: var(--spacing-medium) 0;
     }
-  }
+    @include medium {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include small {
+        grid-template-columns: 1fr;
+        img,
+        .featured-video-plus {
+            margin-left: -8vw;
+            width: calc(100% + var(--body-padding) * 2);
+            max-width: none;
+        }
+    }
 }
 
 .post {
-  position: relative;
-  margin-bottom: var(--spacing-large);
-
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   display: block;
-  //   background: var(--color-text);
-  //   width: calc(100% + 1rem);
-  //   height: calc(100% + 1rem);
-  //   z-index: -1;
-  //   border-radius: .5rem;
-  //   top: -.5rem;
-  //   left: -.5rem;
-  //   opacity: 0;
-  //   transition: var(--all-transition);
-  // }
-
-  // &:hover {
-  //   cursor: pointer;
-
-  //   &::before {
-  //     opacity: .05;
-  //   }
-  // }
-
-  &__title {
-    font-size: 1.25rem;
-    margin-bottom: .5rem;
-  }
-
-  &__content {
-
+    position: relative;
+    margin-bottom: var(--spacing-large);
+    &__title {
+        font-size: 1.25rem;
+        margin-bottom: .5rem;
+    }
+    &__content {
+        a {
+            text-decoration: underline !important;
+        }
+    }
+    h1 {
+        font-size: var(--font-size-xlarge);
+    }
     a {
-      text-decoration: underline !important;
+        display: block;
+        color: var(--color-text);
+        text-decoration: none;
     }
-  }
-
-  // &__thumb {
-
-  //   &:hover {
-  //     opacity: 1;
-  //   }
-  // }
-
-  h1 {
-    font-size: var(--font-size-xlarge);
-  }
-
-  a {
-    display: block;
-    color: var(--color-text);
-    text-decoration: none;
-  }
-
-  p {
-    font-size: var(--font-size-small);
-  }
-
-  img,
-  .featured-video-plus {
-    margin-bottom: 1rem;
-    border-radius: .15rem;
-
-    @include small {
-      border-radius: 0;
+    p {
+        font-size: var(--font-size-small);
     }
-  }
+    img,
+    .featured-video-plus {
+        margin-bottom: 1rem;
+        border-radius: .15rem;
+        filter: drop-shadow(0px 0px var(--spacing-medium) rgba(128, 128, 128, 0.25));
+        @include small {
+            border-radius: 0;
+        }
+    }
 }
 
 // Individual post pages
 .single {
-
-  .post {
-
-    p {
-      font-size: var(--font-size-medium);
+    .post {
+        p {
+            font-size: var(--font-size-medium);
+        }
     }
-  }
-
-  .post-thumbnail {
-    max-width: var(--paragraph-max-width);
-
-    img,
-    .featured-video-plus {
-      margin-bottom: 1.5rem;
+    .post-thumbnail {
+        max-width: var(--paragraph-max-width);
+        img,
+        .featured-video-plus {
+            margin-bottom: 1.5rem;
+        }
     }
-  }
 }
 
 .entry-meta {
-  @include fade-in($fade-one);
+    @include fade-in($fade-one);
 }
 
 .entry-content {
-
-  a {
-    margin-right: var(--spacing-small);
-  }
-
-  p {
-    @include fade-in($fade-three);
-  }
+    a {
+        margin-right: var(--spacing-small);
+    }
+    p {
+        @include fade-in($fade-three);
+    }
 }
 
 .posted-on {
-  font-weight: var(--font-weight-heavy);
-  font-size: var(--font-size-small);
+    font-weight: var(--font-weight-heavy);
+    font-size: var(--font-size-small);
 }
 
 canvas {
-  display: none;
+    display: none;
 }
 
 .p5 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-
-  transition: 200ms opacity ease-out;
-  opacity: 0;
-
-  &.active {
-    opacity: 1;
-
-    canvas {
-      display: block;
-    }
-  }
-
-  &::after {
-    content: '';
     position: absolute;
-    z-index: 1;
-    bottom: 0;
+    top: 0;
     left: 0;
-    pointer-events: none;
-    background-image: linear-gradient(to bottom,
-            var(--color-gradient-start),
-            var(--color-gradient-end) 100%);
     width: 100%;
-    height: 33.33%;
-  }
+    height: 100%;
+    z-index: -1;
+    transition: 200ms opacity ease-out;
+    opacity: 0;
+    &.active {
+        opacity: 1;
+        canvas {
+            display: block;
+        }
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: linear-gradient(to bottom, var(--color-gradient-start), var(--color-gradient-end) 100%);
+        width: 100%;
+        height: 33.33%;
+    }
 }
