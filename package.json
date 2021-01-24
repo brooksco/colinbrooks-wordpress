@@ -9,16 +9,16 @@
     "gulp": "*",
     "gulp-babel": "*",
     "gulp-concat": "*",
-    "gulp-sass": "*",
+    "gulp-sass": "^4.1.0",
     "gulp-uglify": "*",
     "isotope-layout": "*",
     "merge-stream": "*",
-    "npm": "*",
-    "p5": "*"
+    "npm": "^6.14.11",
+    "p5": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/core": "*",
-    "@babel/preset-env": "*",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "babel-core": "*",
     "babel-plugin-transform-runtime": "*"
   }
