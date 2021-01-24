@@ -12,7 +12,9 @@
 }
 
 .hero-text {
-    margin: calc(var(--spacing-large) * 2) 0 calc(var(--spacing-large) * 2.25) 0;
+    // margin: calc(var(--spacing-large) * 2) 0 calc(var(--spacing-large) * 2.25) 0;
+    margin: 25vh 0;
+
     p {
         @include fade-in($fade-two);
         font-size: 6vw;
@@ -27,6 +29,10 @@
         @include small {
             font-size: 10vw;
         }
+    }
+
+    @include small {
+        margin: 20vh 0;
     }
 }
 
@@ -107,9 +113,6 @@
 }
 
 .entry-content {
-    a {
-        margin-right: var(--spacing-small);
-    }
     p {
         @include fade-in($fade-three);
     }

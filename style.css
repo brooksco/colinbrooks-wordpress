@@ -607,7 +607,7 @@ button {
   text-decoration: none; }
 
 .hero-text {
-  margin: calc(var(--spacing-large) * 2) 0 calc(var(--spacing-large) * 2.25) 0; }
+  margin: 25vh 0; }
   .hero-text p {
     opacity: 0;
     animation: fade-in var(--fade-transition-duration) ease-out;
@@ -626,6 +626,9 @@ button {
     @media (max-width: calc(600px - 1px)) {
       .hero-text p {
         font-size: 10vw; } }
+  @media (max-width: calc(600px - 1px)) {
+    .hero-text {
+      margin: 20vh 0; } }
 
 .posts {
   opacity: 0;
@@ -694,9 +697,6 @@ button {
   animation-fill-mode: forwards;
   animation-delay: 50ms;
   position: relative; }
-
-.entry-content a {
-  margin-right: var(--spacing-small); }
 
 .entry-content p {
   opacity: 0;
