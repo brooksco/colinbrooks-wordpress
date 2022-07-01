@@ -1,7 +1,7 @@
 {
   "name": "colinbooks",
-  "version": "3.0.0",
-  "author": "",
+  "version": "5.0.0",
+  "author": "colin brooks",
   "license": "ISC",
   "dependencies": {
     "@fancyapps/fancybox": "*",
@@ -14,7 +14,8 @@
     "isotope-layout": "*",
     "merge-stream": "*",
     "npm": "*",
-    "p5": "*"
+    "p5": "*",
+    "sass": "*"
   },
   "devDependencies": {
     "@babel/core": "*",
