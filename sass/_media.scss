@@ -1,116 +1,119 @@
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
 }
 
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
 object {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
-	display: inline-block;
+  display: inline-block;
 }
 
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
 .wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
+  margin-bottom: 1.5em;
+  max-width: 100%;
 
-	img[class*="wp-image-"] {
-		@include center-block;
-	}
+  img[class*='wp-image-'] {
+    @include center-block;
+  }
 
-	.wp-caption-text {
-		margin: 0.8075em 0;
-	}
+  .wp-caption-text {
+    margin: 0.8075em 0;
+  }
 }
 
 .wp-caption-text {
-	text-align: center;
+  text-align: center;
 }
-
 
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
 .gallery,
 .wp-block-gallery {
-	display: block;
-	opacity: 0;
-	width: calc(100% + (var(--body-padding) * 2));
-	margin: var(--spacing-large) 0 0 calc(-1 * var(--body-padding));
-	transition: var(--all-transition);
+  display: block;
+  opacity: 0;
+  width: calc(100% + (var(--body-padding) * 2));
+  margin: var(--spacing-large) 0 0 calc(-1 * var(--body-padding));
+  transition: var(--all-transition);
 
-	// &--initial {
-	// 	display: none;
-	// 	column-count: 3;
-	// 	column-gap: 0;
+  // &--initial {
+  // 	display: none;
+  // 	column-count: 3;
+  // 	column-gap: 0;
 
-	// 	@include medium {
-	// 		column-count: 2;
-	// 	}
+  // 	@include medium {
+  // 		column-count: 2;
+  // 	}
 
-	// 	@include small {
-	// 		column-count: 1;
-	// 	}
+  // 	@include small {
+  // 		column-count: 1;
+  // 	}
 
-	// 	.gallery-item {
-	// 		width: 100%;
-	// 		break-inside: avoid;
-	// 	}
-	// }
+  // 	.gallery-item {
+  // 		width: 100%;
+  // 		break-inside: avoid;
+  // 	}
+  // }
 
-	&.active {
-		opacity: 1;
-	}
+  &.active {
+    opacity: 1;
+  }
 }
 
 // Specificity is a mess with the blocks gallery
 .gallery-item,
 .main .wp-block-gallery .blocks-gallery-item {
-	display: block;
-	margin: 0;
-	width: 33.33%;
+  display: block;
+  margin: 0;
+  width: 33.33%;
 
-	@include medium {
-		width: 50%;
-	}
+  @include medium {
+    width: 50%;
+  }
 
-	@include small {
-		width: 100%;
-	}
+  @include small {
+    width: 100%;
+  }
 }
 
 .gallery-caption {
-	display: block;
+  display: block;
 }
 
 .fancybox-bg {
-	background: var(--color-background) !important;
+  background: var(--color-background) !important;
 }
 
 .fancybox-button {
-	background: none !important;
-	width: calc(var(--fancybox-control-size) + var(--spacing-tiny)) !important;
-	height: calc(var(--fancybox-control-size) + var(--spacing-tiny)) !important;
-	padding: var(--spacing-tiny) !important;
+  background: none !important;
+  width: calc(var(--fancybox-control-size) + var(--spacing-tiny)) !important;
+  height: calc(var(--fancybox-control-size) + var(--spacing-tiny)) !important;
+  padding: var(--spacing-tiny) !important;
 
-	div {
-		padding: 0 !important;
-	}
+  div {
+    padding: 0 !important;
+  }
 }
 
 .fancybox-navigation .fancybox-button {
-	top: calc(50% - var(--fancybox-control-size) / 2) !important;
+  top: calc(50% - var(--fancybox-control-size) / 2) !important;
 }
 
+// Creates odd spacing issue in the background when fancybox is open
+.compensate-for-scrollbar {
+  margin-right: 0 !important;
+}

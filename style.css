@@ -933,6 +933,10 @@ object {
   top: calc(50% - var(--fancybox-control-size) / 2) !important;
 }
 
+.compensate-for-scrollbar {
+  margin-right: 0 !important;
+}
+
 .alignleft {
   display: inline;
   float: left;
