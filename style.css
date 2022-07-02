@@ -934,7 +934,7 @@ object {
 }
 
 .compensate-for-scrollbar {
-  margin-right: 0 !important;
+  margin-right: auto !important;
 }
 
 .alignleft {
