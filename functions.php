@@ -189,3 +189,5 @@ function prefix_conditional_body_class($classes) {
 }
 
 add_filter('body_class', 'prefix_conditional_body_class');
+// Try to get around some WordPress upload bugs
+add_filter( 'big_image_size_threshold', '__return_false' );
