@@ -1,6 +1,6 @@
 // Lines (Perlin)
 if (window.location.pathname == '/') {
-  $(document).ready(() => {
+  document.addEventListener('DOMContentLoaded', () => {
     const p5Lines = new p5((p) => {
       let width = window.innerWidth;
       let height = window.innerHeight;
@@ -9,8 +9,8 @@ if (window.location.pathname == '/') {
       let maxParticles = 0;
       let noiseScale = 200;
       // Not light is default
-      let fillAlpha = window.colorMode == 'light' ? 32 : 48;
-      let backgroundAlpha = window.colorMode == 'light' ? 10 : 6;
+      let fillAlpha = window.colorMode === 'light' ? 32 : 48;
+      let backgroundAlpha = window.colorMode === 'light' ? 10 : 6;
 
       function startingX() {
         return p.random(-(width / 4), width + width / 4);
@@ -45,7 +45,7 @@ if (window.location.pathname == '/') {
       };
 
       p.draw = function () {
-        if (window.colorMode == 'light') {
+        if (window.colorMode === 'light') {
           p.background(255, 255, 255, backgroundAlpha);
         } else {
           p.background(0, 0, 0, backgroundAlpha);

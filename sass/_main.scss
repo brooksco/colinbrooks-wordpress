@@ -134,7 +134,8 @@
 }
 
 .entry-content {
-  p {
+  p,
+  figure {
     @include fade-in($fade-three);
   }
 }

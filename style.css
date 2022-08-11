@@ -821,7 +821,8 @@ button:hover, button:active {
   margin-bottom: 1rem;
 }
 
-.entry-content p {
+.entry-content p,
+.entry-content figure {
   opacity: 0;
   animation: fade-in var(--fade-transition-duration) ease-out;
   animation-fill-mode: forwards;
