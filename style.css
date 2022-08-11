@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: colinbooks
 Theme URI: http://underscores.me/
@@ -332,8 +333,10 @@ template {
   --color-link: royalblue;
   --color-link-hover: midnightblue;
   --color-blue: #4169e1;
+  --color-blue--dark: #1a3da6;
   --color-pink: #e82199;
   --color-red-pink: #e14169;
+  --color-red-pink--dark: #951737;
   --color-gray: #677685;
   --color-text: #ffffff;
   --color-text-gray: #adadad;
@@ -342,23 +345,25 @@ template {
   --color-gradient-end: rgba(0, 0, 0, 1);
   --font-family-base: -apple-system, BlinkMacSystemFont, "Roboto", arial, sans-serif;
   --font-size-base: 16px;
-  --line-height-base: 1.4;
-  --font-weight-base: 400;
-  --font-weight-heavy: 600;
-  --paragraph-max-width: 800px;
   --font-size-small: 1rem;
-  --font-size-medium: 1.5rem;
+  --font-size-medium: 1.25rem;
   --font-size-large: 2rem;
   --font-size-xlarge: 4rem;
+  --font-weight-base: 400;
+  --font-weight-heavy: 700;
+  --line-height-base: 1.4;
+  --line-height-headline: 1.25;
+  --line-height-hero: 1.1;
   --medium-min-width: $medium-min-width;
   --large-min-width: $large-min-width;
   --xlarge-min-width: $xlarge-min-width;
-  --spacing-tiny: 8px;
-  --spacing-small: 16px;
-  --spacing-medium: 32px;
-  --spacing-large: 64px;
-  --spacing-xlarge: 128px;
+  --spacing-tiny: .5rem;
+  --spacing-small: 1rem;
+  --spacing-medium: 2rem;
+  --spacing-large: 4rem;
+  --spacing-xlarge: 8rem;
   --max-width: 1200px;
+  --paragraph-max-width: 800px;
   --body-padding: 8vw;
   --all-transition: all 200ms ease-out;
   --all-transition--fast: all 100ms ease-out;
@@ -400,9 +405,10 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-weight: var(--font-weight-heavy);
+  line-height: var(--line-height-headline);
   clear: both;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 var(--spacing-medium) 0;
 }
 
 h1 {
@@ -412,6 +418,8 @@ h1 {
   animation-delay: 100ms;
   position: relative;
   font-size: 13vw;
+  line-height: var(--line-height-hero);
+  margin: 0 0 var(--spacing-large) 0;
 }
 @media (min-width: 1200px) {
   h1 {
@@ -419,27 +427,46 @@ h1 {
   }
 }
 
+h2 {
+  font-size: var(--font-size-large);
+}
+
+h3, h4, h5, h6 {
+  font-size: var(--font-size-medium);
+}
+
 p {
   font-size: var(--font-size-medium);
-  font-weight: 400;
-  margin: 0 0 1.5rem 0;
+  font-weight: var(--font-weight-base);
+  margin: 0 0 var(--spacing-medium) 0;
   max-width: var(--paragraph-max-width);
+}
+
+figure,
+.wp-block-image {
+  margin: 0 0 var(--spacing-large) 0;
+  max-width: var(--paragraph-max-width);
+}
+
+figcaption {
+  text-align: center;
+}
+
+blockquote {
+  margin: 0 0 var(--spacing-large) 0;
+  padding-left: 1.25rem;
+  border-left: 0.25rem solid var(--color-text);
+  font-style: italic;
+}
+blockquote cite {
+  font-size: var(--font-size-medium);
+}
+blockquote cite::before {
+  content: "— ";
 }
 
 dfn, cite, em, i {
   font-style: italic;
-}
-
-blockquote {
-  margin: 0 1.5rem;
-}
-
-address {
-  margin: 0 0 1.5rem;
-}
-
-big {
-  font-size: 125%;
 }
 
 html {
@@ -555,14 +582,18 @@ button:hover, button:active {
   transition: var(--all-transition--fast);
   text-decoration: none;
   font-size: var(--font-size-small);
-  font-weight: 600;
-}
-.button--secondary {
-  background: var(--color-red-pink);
+  font-weight: var(--font-weight-heavy);
 }
 .button:hover {
   opacity: 1;
   bottom: 0.1rem;
+  background: var(--color-blue--dark);
+}
+.button--secondary {
+  background: var(--color-red-pink);
+}
+.button--secondary:hover {
+  background: var(--color-red-pink--dark);
 }
 
 .footer {
@@ -629,7 +660,6 @@ button:hover, button:active {
 @media (max-width: calc(600px - 1px)) {
   .header {
     flex-direction: column;
-    margin: var(--spacing-medium) 0;
   }
 }
 
@@ -680,9 +710,10 @@ button:hover, button:active {
   animation-fill-mode: forwards;
   animation-delay: 100ms;
   position: relative;
-  font-size: 6vw;
   max-width: 1000px;
+  font-size: 6vw;
   font-weight: var(--font-weight-heavy);
+  line-height: var(--line-height-hero);
 }
 @media (min-width: 1200px) {
   .hero-text p {
@@ -740,6 +771,11 @@ button:hover, button:active {
     grid-template-columns: 1fr;
   }
 }
+.posts a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+}
 
 .post {
   position: relative;
@@ -754,11 +790,6 @@ button:hover, button:active {
 }
 .post h1 {
   font-size: var(--font-size-xlarge);
-}
-.post a {
-  display: block;
-  color: var(--color-text);
-  text-decoration: none;
 }
 .post p {
   font-size: var(--font-size-small);
@@ -787,6 +818,7 @@ button:hover, button:active {
   animation-fill-mode: forwards;
   animation-delay: 50ms;
   position: relative;
+  margin-bottom: 1rem;
 }
 
 .entry-content p {

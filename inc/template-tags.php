@@ -16,7 +16,7 @@ if ( ! function_exists( 'colinbooks_posted_on' ) ) :
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date('Y') ),
+			esc_html( get_the_date('F j, Y') ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
@@ -123,9 +123,7 @@ if ( ! function_exists( 'colinbooks_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+			<?php //the_post_thumbnail(); ?>
 
 			<?php else : ?>
 

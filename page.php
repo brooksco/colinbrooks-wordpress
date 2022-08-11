@@ -33,7 +33,7 @@ get_header();
 
             edit_post_link('Edit');
             ?>
-            
+
         </main><!-- #main -->
     </div><!-- #primary -->
 

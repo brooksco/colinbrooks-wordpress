@@ -13,8 +13,10 @@ $xlarge-min-width: 1200px;
 	--color-link-hover: midnightblue;
 
 	--color-blue: #4169e1;
+	--color-blue--dark: #1a3da6;
 	--color-pink: #e82199;
 	--color-red-pink: #e14169;
+	--color-red-pink--dark: #951737;
 
 	--color-gray: #677685;
 
@@ -30,28 +32,32 @@ $xlarge-min-width: 1200px;
 	// Typography
 	--font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', arial, sans-serif;
 	--font-size-base: 16px;
-	--line-height-base: 1.4;
-	--font-weight-base: 400;
-	--font-weight-heavy: 600;
-	--paragraph-max-width: 800px;
 
 	--font-size-small: 1rem;
-	--font-size-medium: 1.5rem;
+	--font-size-medium: 1.25rem;
 	--font-size-large: 2rem;
 	--font-size-xlarge: 4rem;
+
+	--font-weight-base: 400;
+	--font-weight-heavy: 700;
+
+	--line-height-base: 1.4;
+	--line-height-headline: 1.25;
+	--line-height-hero: 1.1;
 
 	// Layout
 	--medium-min-width: $medium-min-width;
 	--large-min-width: $large-min-width;
 	--xlarge-min-width: $xlarge-min-width;
 
-	--spacing-tiny: 8px;
-	--spacing-small: 16px;
-	--spacing-medium: 32px;
-	--spacing-large: 64px;
-	--spacing-xlarge: 128px;
+	--spacing-tiny: .5rem;
+	--spacing-small: 1rem;
+	--spacing-medium: 2rem;
+	--spacing-large: 4rem;
+	--spacing-xlarge: 8rem;
 
 	--max-width: 1200px;
+	--paragraph-max-width: 800px;
 	--body-padding: 8vw;
 
 	// Transitions

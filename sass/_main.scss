@@ -16,9 +16,10 @@
 
   p {
     @include fade-in($fade-two);
-    font-size: 6vw;
     max-width: 1000px;
+    font-size: 6vw;
     font-weight: var(--font-weight-heavy);
+    line-height: var(--line-height-hero);
 
     @include xlarge {
       font-size: 5rem;
@@ -64,6 +65,12 @@
   @include small {
     grid-template-columns: 1fr;
   }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text);
+  }
 }
 
 .post {
@@ -85,11 +92,9 @@
     font-size: var(--font-size-xlarge);
   }
 
-  a {
-    display: block;
-    color: var(--color-text);
-    text-decoration: none;
-  }
+  // a {
+  //   color: var(--color-text);
+  // }
 
   p {
     font-size: var(--font-size-small);
@@ -125,6 +130,7 @@
 
 .entry-meta {
   @include fade-in($fade-one);
+  margin-bottom: 1rem;
 }
 
 .entry-content {

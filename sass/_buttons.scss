@@ -11,14 +11,19 @@
   transition: var(--all-transition--fast);
   text-decoration: none;
   font-size: var(--font-size-small);
-  font-weight: 600;
-
-  &--secondary {
-    background: var(--color-red-pink);
-  }
+  font-weight: var(--font-weight-heavy);
 
   &:hover {
     opacity: 1;
     bottom: .1rem;
+    background: var(--color-blue--dark);
+  }
+
+  &--secondary {
+    background: var(--color-red-pink);
+
+    &:hover {
+      background: var(--color-red-pink--dark);
+    }
   }
 }
