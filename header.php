@@ -98,7 +98,7 @@ dmmmmmmd+.      hmmmmm:     +dmdo-` .hmmmmmd.
     <header class="header">
         <?php the_custom_logo(); ?>
         <h2 class="header__title">
-            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?><?php if (!(is_front_page())) { ?> ↰<?php } ?></a>
             <?php if (is_front_page()) { ?><br><?php bloginfo('description'); ?><?php } ?>
         </h2>
         <?php
