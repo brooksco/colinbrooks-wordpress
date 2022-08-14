@@ -40,17 +40,7 @@ dmmmmmmd+.      hmmmmm:     +dmdo-` .hmmmmmd.
 
     <?php wp_head(); ?>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41574595-2"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-41574595-2');
-
         // Setup color mode handling
         // ..."storage" determines if we save the setting or not (only if it was a choice)
         // ...and colorMode must be stored on the window for the p5 sketches
@@ -62,12 +52,12 @@ dmmmmmmd+.      hmmmmm:     +dmdo-` .hmmmmmd.
 
             const colorModeEl = document.querySelector('.footer__color-mode');
             const metaThemeColor = document.querySelector('meta[name=theme-color]');
-            if (mode === 'light') {
-                colorModeEl.innerHTML = '🌑';
-                if (metaThemeColor) metaThemeColor.setAttribute('content', '#ffffff');
-            } else {
+            if (mode === 'dark') {
                 colorModeEl.innerHTML = '💡';
                 if (metaThemeColor) metaThemeColor.setAttribute('content', '#000000');
+            } else {
+                colorModeEl.innerHTML = '🌑';
+                if (metaThemeColor) metaThemeColor.setAttribute('content', '#ffffff');
             }
         }
 
@@ -91,6 +81,17 @@ dmmmmmmd+.      hmmmmm:     +dmdo-` .hmmmmmd.
                 });
             }
         });
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41574595-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-41574595-2');
     </script>
 </head>
 

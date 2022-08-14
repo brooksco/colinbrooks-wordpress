@@ -328,7 +328,7 @@ template {
 }
 
 :root {
-  --color-background: #000;
+  --color-background: #ffffff;
   --color-background-hr: #ccc;
   --color-link: royalblue;
   --color-link-hover: midnightblue;
@@ -338,11 +338,11 @@ template {
   --color-red-pink: #e14169;
   --color-red-pink--dark: #951737;
   --color-gray: #677685;
-  --color-text: #ffffff;
-  --color-text-gray: #adadad;
+  --color-text: #000000;
+  --color-text-gray: #808080;
   --color-button-text: #ffffff;
-  --color-gradient-start: rgba(0, 0, 0, 0);
-  --color-gradient-end: rgba(0, 0, 0, 1);
+  --color-gradient-start: rgba(255, 255, 255, 0);
+  --color-gradient-end: rgba(255, 255, 255, 1);
   --font-family-base: -apple-system, BlinkMacSystemFont, "Roboto", arial, sans-serif;
   --font-size-base: 16px;
   --font-size-small: 1rem;
@@ -372,16 +372,20 @@ template {
   --fancybox-control-size: 64px;
 }
 
+.dark {
+  --color-background: #000;
+  --color-text: #ffffff;
+  --color-text-gray: #adadad;
+  --color-gradient-start: rgba(0, 0, 0, 0);
+  --color-gradient-end: rgba(0, 0, 0, 1);
+}
+
 .light {
   --color-background: #ffffff;
   --color-text: #000000;
   --color-text-gray: #808080;
   --color-gradient-start: rgba(255, 255, 255, 0);
   --color-gradient-end: rgba(255, 255, 255, 1);
-}
-.light .footer__color-mode:hover, .light .footer__color-mode:active {
-  filter: brightness(75%);
-  opacity: 1;
 }
 
 @keyframes fade-in {
