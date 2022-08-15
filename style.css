@@ -408,7 +408,12 @@ textarea {
   color: var(--color-text);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: var(--font-weight-heavy);
   line-height: var(--line-height-headline);
   clear: both;
@@ -435,13 +440,27 @@ h2 {
   font-size: var(--font-size-large);
 }
 
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
   font-size: var(--font-size-medium);
 }
 
-p {
+p,
+.entry-content li {
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-base);
+}
+
+.entry-content ul,
+.entry-content ol {
+  margin: 0 0 var(--spacing-medium) 0;
+  padding-left: var(--spacing-medium);
+  max-width: var(--paragraph-max-width);
+}
+
+p {
   margin: 0 0 var(--spacing-medium) 0;
   max-width: var(--paragraph-max-width);
 }
@@ -469,7 +488,10 @@ blockquote cite::before {
   content: "— ";
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic;
 }
 
@@ -783,39 +805,37 @@ button:hover, button:active {
   text-decoration: none;
   color: var(--color-text);
 }
-
-.post {
+.posts .post {
   position: relative;
   margin-bottom: var(--spacing-large);
 }
-.post__title {
+.posts .post__title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
+.posts .post p,
+.posts .post li {
+  font-size: var(--font-size-small);
+}
+.posts .post img,
+.posts .post .featured-video-plus {
+  margin-bottom: 1rem;
+  border-radius: 0.15rem;
+  filter: drop-shadow(0px 0px calc(var(--spacing-small) * 1.5) rgba(128, 128, 128, 0.15));
+}
+
 .post__content a {
   text-decoration: underline !important;
 }
 .post h1 {
   font-size: var(--font-size-xlarge);
 }
-.post p {
-  font-size: var(--font-size-small);
-}
-.post img,
-.post .featured-video-plus {
-  margin-bottom: 1rem;
-  border-radius: 0.15rem;
-  filter: drop-shadow(0px 0px calc(var(--spacing-small) * 1.5) rgba(128, 128, 128, 0.15));
-}
 
-.single .post p {
-  font-size: var(--font-size-medium);
-}
-.single .post-thumbnail {
+.post-thumbnail {
   max-width: var(--paragraph-max-width);
 }
-.single .post-thumbnail img,
-.single .post-thumbnail .featured-video-plus {
+.post-thumbnail img,
+.post-thumbnail .featured-video-plus {
   margin-bottom: 1.5rem;
 }
 

@@ -12,7 +12,12 @@ textarea {
   color: var(--color-text);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: var(--font-weight-heavy);
   line-height: var(--line-height-headline);
   clear: both;
@@ -34,13 +39,27 @@ h2 {
   font-size: var(--font-size-large);
 }
 
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
   font-size: var(--font-size-medium);
 }
 
-p {
+p,
+.entry-content li {
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-base);
+}
+
+.entry-content ul,
+.entry-content ol {
+  margin: 0 0 var(--spacing-medium) 0;
+  padding-left: var(--spacing-medium);
+  max-width: var(--paragraph-max-width);
+}
+
+p {
   margin: 0 0 var(--spacing-medium) 0;
   max-width: var(--paragraph-max-width);
 }
@@ -58,7 +77,7 @@ figcaption {
 blockquote {
   margin: 0 0 var(--spacing-large) 0;
   padding-left: 1.25rem;
-  border-left: .25rem solid var(--color-text);
+  border-left: 0.25rem solid var(--color-text);
   font-style: italic;
 
   cite {
@@ -70,6 +89,9 @@ blockquote {
   }
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic;
 }
