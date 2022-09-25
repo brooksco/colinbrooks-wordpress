@@ -31,21 +31,21 @@
 		color: var(--color-text-gray);
 	}
 
-	&__color-mode {
-		display: inline-flex;
-		background: none;
-		border: none;
-		cursor: pointer;
-		outline: none;
-		margin: 0 0 0 var(--spacing-small);
-		padding: 0;
-		position: relative;
-		font-size: 1.5rem;
+	// &__color-mode {
+	// 	display: inline-flex;
+	// 	background: none;
+	// 	border: none;
+	// 	cursor: pointer;
+	// 	outline: none;
+	// 	margin: 0 0 0 var(--spacing-small);
+	// 	padding: 0;
+	// 	position: relative;
+	// 	font-size: 1.5rem;
 
-		&:hover,
-		&:active {
-			filter: brightness(150%);
-			opacity: 1;
-		}
-	}
+	// 	&:hover,
+	// 	&:active {
+	// 		filter: brightness(150%);
+	// 		opacity: 1;
+	// 	}
+	// }
 }

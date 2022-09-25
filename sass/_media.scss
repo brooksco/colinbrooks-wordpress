@@ -47,27 +47,9 @@ object {
   display: block;
   opacity: 0;
   width: calc(100% + (var(--body-padding) * 2));
+  max-width: none;
   margin: var(--spacing-large) 0 0 calc(-1 * var(--body-padding));
   transition: var(--all-transition);
-
-  // &--initial {
-  // 	display: none;
-  // 	column-count: 3;
-  // 	column-gap: 0;
-
-  // 	@include medium {
-  // 		column-count: 2;
-  // 	}
-
-  // 	@include small {
-  // 		column-count: 1;
-  // 	}
-
-  // 	.gallery-item {
-  // 		width: 100%;
-  // 		break-inside: avoid;
-  // 	}
-  // }
 
   &.active {
     opacity: 1;
@@ -75,18 +57,22 @@ object {
 }
 
 // Specificity is a mess with the blocks gallery
-.gallery-item,
-.main .wp-block-gallery .blocks-gallery-item {
+.photography .gallery-item,
+.photography .wp-block-gallery .wp-block-image,
+.photography .wp-block-gallery .blocks-gallery-item {
   display: block;
   margin: 0;
-  width: 33.33%;
+
+  @include large {
+    width: 33.33% !important;
+  }
 
   @include medium {
-    width: 50%;
+    width: 50% !important;
   }
 
   @include small {
-    width: 100%;
+    width: 100% !important;
   }
 }
 

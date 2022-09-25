@@ -25,7 +25,6 @@
 
 	<div class="footer__wrapper">
 		<a class="footer__email" href="mailto:colinbrooks@hey.com" target="_top">colinbrooks@hey.com</a>
-		<button aria-label="Toggle dark mode" class="footer__color-mode">💡</button>
 	</div>
 </footer>
 

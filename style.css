@@ -508,7 +508,6 @@ html {
 
 body {
   background: var(--color-background);
-  /* Fallback for when there is no custom background color defined. */
   font-size: var(--font-size-base);
   -webkit-font-smoothing: antialiased;
   max-width: calc(var(--max-width) + var(--body-padding) * 2);
@@ -651,21 +650,6 @@ button:hover, button:active {
   color: var(--color-text);
   text-decoration: none;
   color: var(--color-text-gray);
-}
-.footer__color-mode {
-  display: inline-flex;
-  background: none;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  margin: 0 0 0 var(--spacing-small);
-  padding: 0;
-  position: relative;
-  font-size: 1.5rem;
-}
-.footer__color-mode:hover, .footer__color-mode:active {
-  filter: brightness(150%);
-  opacity: 1;
 }
 
 .header {
@@ -944,6 +928,7 @@ object {
   display: block;
   opacity: 0;
   width: calc(100% + var(--body-padding) * 2);
+  max-width: none;
   margin: var(--spacing-large) 0 0 calc(-1 * var(--body-padding));
   transition: var(--all-transition);
 }
@@ -952,22 +937,31 @@ object {
   opacity: 1;
 }
 
-.gallery-item,
-.main .wp-block-gallery .blocks-gallery-item {
+.photography .gallery-item,
+.photography .wp-block-gallery .wp-block-image,
+.photography .wp-block-gallery .blocks-gallery-item {
   display: block;
   margin: 0;
-  width: 33.33%;
+}
+@media (min-width: 900px) {
+  .photography .gallery-item,
+.photography .wp-block-gallery .wp-block-image,
+.photography .wp-block-gallery .blocks-gallery-item {
+    width: 33.33% !important;
+  }
 }
 @media (min-width: 600px) and (max-width: calc(900px - 1px)) {
-  .gallery-item,
-.main .wp-block-gallery .blocks-gallery-item {
-    width: 50%;
+  .photography .gallery-item,
+.photography .wp-block-gallery .wp-block-image,
+.photography .wp-block-gallery .blocks-gallery-item {
+    width: 50% !important;
   }
 }
 @media (max-width: calc(600px - 1px)) {
-  .gallery-item,
-.main .wp-block-gallery .blocks-gallery-item {
-    width: 100%;
+  .photography .gallery-item,
+.photography .wp-block-gallery .wp-block-image,
+.photography .wp-block-gallery .blocks-gallery-item {
+    width: 100% !important;
   }
 }
 

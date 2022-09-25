@@ -179,10 +179,17 @@ add_filter( 'emoji_svg_url', '__return_false' );
 add_filter('wp_get_attachment_link', 'add_rel_to_gallery', 10, 2);
 
 function prefix_conditional_body_class($classes) {
-    if (is_page_template('gallery.php')) {
-        $classes[] = 'template-photography';
-    } else if (is_page_template('home.php')) {
-        $classes[] = 'template-home';
+    if (is_page_template('home.php')) {
+        $classes[] = 'home';
+    } else if (is_page_template('gallery.php')) {
+        $classes[] = 'photography';
+    }
+
+    # Only posts should have light backgrounds (for readability)
+    if (get_post_type() === 'post') {
+        $classes[] = 'light';
+    } else {
+        $classes[] = 'dark';
     }
 
     return $classes;

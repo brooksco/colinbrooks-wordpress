@@ -42,44 +42,23 @@ dmmmmmmd+.      hmmmmm:     +dmdo-` .hmmmmmd.
 
     <script>
         // Setup color mode handling
-        // ..."storage" determines if we save the setting or not (only if it was a choice)
-        // ...and colorMode must be stored on the window for the p5 sketches
-        function setColorMode(mode, storage = false) {
+        // colorMode must be stored on the window for the p5 sketches
+        function setColorMode(mode) {
             window.colorMode = mode;
-            document.body.classList.remove('light', 'dark');
-            document.body.classList.add(mode);
-            if (storage) localStorage.setItem('colorMode', mode);
 
-            const colorModeEl = document.querySelector('.footer__color-mode');
             const metaThemeColor = document.querySelector('meta[name=theme-color]');
-            if (mode === 'dark') {
-                colorModeEl.innerHTML = '💡';
-                if (metaThemeColor) metaThemeColor.setAttribute('content', '#000000');
-            } else {
-                colorModeEl.innerHTML = '🌑';
-                if (metaThemeColor) metaThemeColor.setAttribute('content', '#ffffff');
+            if (metaThemeColor) {
+                if (mode === 'dark') {
+                    metaThemeColor.setAttribute('content', '#000000');
+                } else {
+                    metaThemeColor.setAttribute('content', '#ffffff');
+                }
             }
         }
 
-        // Set initial color as soon as possible so there's no flash of the wrong colors
-        const previousColorMode = localStorage.getItem('colorMode');
         document.addEventListener('DOMContentLoaded', () => {
-            if (previousColorMode) {
-                setColorMode(previousColorMode);
-            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                setColorMode('dark', false);
-            } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-                setColorMode('light', false);
-            }
-
-            // Set up listener for changing color mode
-            const colorModeEl = document.querySelector('.footer__color-mode');
-            if (colorModeEl) {
-                colorModeEl.addEventListener('click', () => {
-                    const newColorMode = window.colorMode === 'light' ? 'dark' : 'light';
-                    setColorMode(newColorMode, true);
-                });
-            }
+            const colorMode = document.body.classList.contains('dark') ? 'dark' : 'light';
+            setColorMode(colorMode);
         });
     </script>
 
@@ -87,6 +66,7 @@ dmmmmmmd+.      hmmmmm:     +dmdo-` .hmmmmmd.
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41574595-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
