@@ -55,8 +55,12 @@ p,
 .entry-content ul,
 .entry-content ol {
   margin: 0 0 var(--spacing-medium) 0;
-  padding-left: var(--spacing-medium);
   max-width: var(--paragraph-max-width);
+  padding-left: var(--spacing-large);
+
+  @include small {
+    padding-left: var(--spacing-medium);
+  }
 }
 
 p {
@@ -72,6 +76,7 @@ figure,
 
 figcaption {
   text-align: center;
+  color: var(--color-text-gray);
 }
 
 blockquote {
