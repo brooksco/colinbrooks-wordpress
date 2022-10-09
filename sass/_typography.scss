@@ -66,6 +66,7 @@ p,
 p {
   margin: 0 0 var(--spacing-medium) 0;
   max-width: var(--paragraph-max-width);
+  word-break: break-word;
 }
 
 figure,
