@@ -12,10 +12,10 @@
 			padding: var(--spacing-small) 0;
 
 			a {
-				// padding: var(--spacing-small);
 				margin-right: var(--spacing-small);
 				text-decoration: none;
 				color: var(--color-text);
+				font-size: var(--font-size-small);
 			}
 		}
 	}
@@ -26,9 +26,9 @@
 	}
 
 	&__email {
-		color: var(--color-text);
 		text-decoration: none;
 		color: var(--color-text-gray);
+		font-size: var(--font-size-small);
 	}
 
 	// &__color-mode {

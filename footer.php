@@ -24,7 +24,7 @@
 	</ul>
 
 	<div class="footer__wrapper">
-		<a class="footer__email" href="mailto:colinbrooks@hey.com" target="_top">colinbrooks@hey.com</a>
+		<p class="footer__email">colinbooks[at]gmail.com</p>
 	</div>
 </footer>
 

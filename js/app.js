@@ -1,8 +1,9 @@
 // Shuffle gallery order
-const gallery = document.querySelector('.wp-block-gallery');
-for (let i = gallery.children.length; i >= 0; i--) {
-    gallery.appendChild(gallery.children[Math.random() * i | 0]);
-}
+[...document.querySelectorAll('.wp-block-gallery')].forEach((gallery) => {
+  for (let i = gallery.children.length; i >= 0; i--) {
+    gallery.appendChild(gallery.children[(Math.random() * i) | 0]);
+  }
+});
 
 // Setup fancybox
 $.fancybox.defaults.buttons = ['close'];

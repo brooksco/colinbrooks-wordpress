@@ -458,7 +458,7 @@ p,
 }
 @media (max-width: calc(600px - 1px)) {
   .entry-content ul,
-.entry-content ol {
+  .entry-content ol {
     padding-left: var(--spacing-medium);
   }
 }
@@ -646,15 +646,16 @@ button:hover, button:active {
   margin-right: var(--spacing-small);
   text-decoration: none;
   color: var(--color-text);
+  font-size: var(--font-size-small);
 }
 .footer__wrapper {
   display: flex;
   align-items: center;
 }
 .footer__email {
-  color: var(--color-text);
   text-decoration: none;
   color: var(--color-text-gray);
+  font-size: var(--font-size-small);
 }
 
 .header {
@@ -950,22 +951,22 @@ object {
 }
 @media (min-width: 900px) {
   .photography .gallery-item,
-.photography .wp-block-gallery .wp-block-image,
-.photography .wp-block-gallery .blocks-gallery-item {
+  .photography .wp-block-gallery .wp-block-image,
+  .photography .wp-block-gallery .blocks-gallery-item {
     width: 33.33% !important;
   }
 }
 @media (min-width: 600px) and (max-width: calc(900px - 1px)) {
   .photography .gallery-item,
-.photography .wp-block-gallery .wp-block-image,
-.photography .wp-block-gallery .blocks-gallery-item {
+  .photography .wp-block-gallery .wp-block-image,
+  .photography .wp-block-gallery .blocks-gallery-item {
     width: 50% !important;
   }
 }
 @media (max-width: calc(600px - 1px)) {
   .photography .gallery-item,
-.photography .wp-block-gallery .wp-block-image,
-.photography .wp-block-gallery .blocks-gallery-item {
+  .photography .wp-block-gallery .wp-block-image,
+  .photography .wp-block-gallery .blocks-gallery-item {
     width: 100% !important;
   }
 }
