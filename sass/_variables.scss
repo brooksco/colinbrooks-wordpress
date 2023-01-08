@@ -5,79 +5,85 @@ $large-min-width: 900px;
 $xlarge-min-width: 1200px;
 
 :root {
-	// Colors
-	--color-background: #ffffff;
-	--color-background-hr: #ccc;
+  // Colors
+  --color-background: #ffffff;
+  --color-background-hr: #ccc;
 
-	--color-link: royalblue;
-	--color-link-hover: midnightblue;
+  --color-link: royalblue;
+  --color-link-hover: midnightblue;
 
-	--color-blue: #4169e1;
-	--color-blue--dark: #1a3da6;
-	--color-pink: #e82199;
-	--color-red-pink: #e14169;
-	--color-red-pink--dark: #951737;
+  --color-blue: #4169e1;
+  --color-blue--dark: #1a3da6;
+  --color-pink: #e82199;
+  --color-red-pink: #e14169;
+  --color-red-pink--dark: #951737;
 
-	--color-gray: #677685;
+  --color-gray: #677685;
 
-	--color-text: #000000;
-	--color-text-gray: #767676;
-	--color-button-text: #ffffff;
+  --color-text: #000000;
+  --color-text-gray: #767676;
+  --color-button-text: #ffffff;
 
-	// Blends animation into background
-	--color-gradient-start: rgba(255, 255, 255, 0);
-	--color-gradient-end: rgba(255, 255, 255, 1);
+  // Blends animation into background
+  --color-gradient-start: rgba(255, 255, 255, 0);
+  --color-gradient-end: rgba(255, 255, 255, 1);
 
-	// Typography
-	--font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', arial, sans-serif;
-	--font-size-base: 16px;
+  // Typography
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', arial,
+    sans-serif;
+  --font-size-base: 16px;
 
-	--font-size-small: 1rem;
-	--font-size-medium: 1.25rem;
-	--font-size-large: 2rem;
-	--font-size-xlarge: 4rem;
+  --font-size-small: 1rem;
+  --font-size-medium: 1.25rem;
+  --font-size-large: 2rem;
+  --font-size-xlarge: 4rem;
 
-	--font-weight-base: 400;
-	--font-weight-heavy: 700;
+  --font-weight-base: 400;
+  --font-weight-heavy: 700;
 
-	--line-height-base: 1.4;
-	--line-height-headline: 1.25;
-	--line-height-hero: 1.1;
+  --line-height-base: 1.4;
+  --line-height-headline: 1.25;
+  --line-height-hero: 1.1;
 
-	// Layout
-	--max-width: 1440px;
-	--paragraph-max-width: 800px;
+  // Layout
+  --max-width: 1440px;
+  --paragraph-max-width: 800px;
 
-	--medium-min-width: $medium-min-width;
-	--large-min-width: $large-min-width;
-	--xlarge-min-width: $xlarge-min-width;
+  --medium-min-width: $medium-min-width;
+  --large-min-width: $large-min-width;
+  --xlarge-min-width: $xlarge-min-width;
 
-	--spacing-tiny: .5rem;
-	--spacing-small: 1rem;
-	--spacing-medium: 2rem;
-	--spacing-large: 4rem;
-	--spacing-xlarge: 8rem;
+  --spacing-tiny: 0.5rem;
+  --spacing-small: 1rem;
+  --spacing-medium: 2rem;
+  --spacing-large: 4rem;
+  --spacing-xlarge: 8rem;
 
-	--body-padding: 8vw;
+  --body-padding: 8vw;
 
-	// Transitions
-	--all-transition: all 200ms ease-out;
-	--all-transition--fast: all 100ms ease-out;
-	--fade-transition-duration: 200ms;
-	--hover-opacity: .75;
+  // Transitions
+  --all-transition: all 200ms ease-out;
+  --all-transition--fast: all 100ms ease-out;
+  --fade-transition-duration: 200ms;
+  --hover-opacity: 0.75;
 
-	// Fancybox overrides
-	--fancybox-control-size: 64px;
+  // Fancybox overrides
+  --fancybox-control-size: 64px;
+
+  @include small {
+    --font-size-xlarge: 3rem;
+
+  }
 }
 
 .dark {
-	--color-background: #000;
-	--color-text: #ffffff;
-	--color-text-gray: #adadad;
+  --color-background: #000;
+  --color-text: #ffffff;
+  --color-text-gray: #adadad;
 
-	// Blends animation into background
-	--color-gradient-start: rgba(0, 0, 0, 0);
-	--color-gradient-end: rgba(0, 0, 0, 1);
+  // Blends animation into background
+  --color-gradient-start: rgba(0, 0, 0, 0);
+  --color-gradient-end: rgba(0, 0, 0, 1);
 }
 
 // @media (prefers-color-scheme: light) {
@@ -93,16 +99,16 @@ $xlarge-min-width: 1200px;
 // }
 
 $columns: (
-	1: 100%,
-	2: 50%,
-	3: 33.33%,
-	4: 25%,
-	5: 20%,
-	6: 16.66%,
-	7: 14.28%,
-	8: 12.5%,
-	9: 11.11%
-	);
+  1: 100%,
+  2: 50%,
+  3: 33.33%,
+  4: 25%,
+  5: 20%,
+  6: 16.66%,
+  7: 14.28%,
+  8: 12.5%,
+  9: 11.11%,
+);
 
 $columns__margin: 3.8%;
 

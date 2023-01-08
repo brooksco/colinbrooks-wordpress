@@ -326,6 +326,14 @@ template {
   display: none;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 :root {
   --color-background: #ffffff;
   --color-background-hr: #ccc;
@@ -342,7 +350,8 @@ template {
   --color-button-text: #ffffff;
   --color-gradient-start: rgba(255, 255, 255, 0);
   --color-gradient-end: rgba(255, 255, 255, 1);
-  --font-family-base: -apple-system, BlinkMacSystemFont, "Roboto", arial, sans-serif;
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Roboto", arial,
+    sans-serif;
   --font-size-base: 16px;
   --font-size-small: 1rem;
   --font-size-medium: 1.25rem;
@@ -358,7 +367,7 @@ template {
   --medium-min-width: $medium-min-width;
   --large-min-width: $large-min-width;
   --xlarge-min-width: $xlarge-min-width;
-  --spacing-tiny: .5rem;
+  --spacing-tiny: 0.5rem;
   --spacing-small: 1rem;
   --spacing-medium: 2rem;
   --spacing-large: 4rem;
@@ -367,8 +376,13 @@ template {
   --all-transition: all 200ms ease-out;
   --all-transition--fast: all 100ms ease-out;
   --fade-transition-duration: 200ms;
-  --hover-opacity: .75;
+  --hover-opacity: 0.75;
   --fancybox-control-size: 64px;
+}
+@media (max-width: calc(600px - 1px)) {
+  :root {
+    --font-size-xlarge: 3rem;
+  }
 }
 
 .dark {
@@ -379,14 +393,6 @@ template {
   --color-gradient-end: rgba(0, 0, 0, 1);
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 body,
 button,
 input,
