@@ -632,18 +632,15 @@ button:hover, button:active {
 .footer {
   margin: var(--spacing-large) 0;
 }
-.footer__links {
+.footer__links ul {
   display: flex;
+  gap: var(--spacing-small);
   list-style: none;
-  margin: var(--spacing-small) 0;
-  padding-left: 0;
+  margin: 0 0 var(--spacing-medium) 0;
+  padding: 0;
   flex-wrap: wrap;
 }
-.footer__links li {
-  padding: var(--spacing-small) 0;
-}
 .footer__links li a {
-  margin-right: var(--spacing-small);
   text-decoration: none;
   color: var(--color-text);
   font-size: var(--font-size-small);
