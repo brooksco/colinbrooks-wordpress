@@ -1,4 +1,5 @@
 <?php
+
 /**
  * colinbooks functions and definitions
  *
@@ -15,7 +16,8 @@ if (!function_exists('colinbooks_setup')) :
      * runs before the init hook. The init hook is too late for some features, such
      * as indicating support for post thumbnails.
      */
-    function colinbooks_setup() {
+    function colinbooks_setup()
+    {
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
@@ -89,7 +91,8 @@ add_action('after_setup_theme', 'colinbooks_setup');
  *
  * @global int $content_width
  */
-function colinbooks_content_width() {
+function colinbooks_content_width()
+{
     // This variable is intended to be overruled from themes.
     // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
     // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
@@ -103,7 +106,8 @@ add_action('after_setup_theme', 'colinbooks_content_width', 0);
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function colinbooks_widgets_init() {
+function colinbooks_widgets_init()
+{
     register_sidebar(array(
         'name' => esc_html__('Sidebar', 'colinbooks'),
         'id' => 'sidebar-1',
@@ -120,7 +124,8 @@ add_action('widgets_init', 'colinbooks_widgets_init');
 /**
  * Enqueue scripts and styles.
  */
-function colinbooks_scripts() {
+function colinbooks_scripts()
+{
     wp_enqueue_style('colinbooks-style', get_stylesheet_uri());
 
     wp_deregister_script('jquery');
@@ -158,28 +163,31 @@ if (defined('JETPACK__VERSION')) {
     require get_template_directory() . '/inc/jetpack.php';
 }
 
-function add_rel_to_gallery($link, $id) {
+function add_rel_to_gallery($link, $id)
+{
     return str_replace('<a href=', '<a data-fancybox="gallery" href=', $link);
 }
 
 // Disable weird WP emoji behavior
 // Source: https://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2
-function disable_wp_emojicons() {
-  // all actions related to emojis
-  remove_action( 'admin_print_styles', 'print_emoji_styles' );
-  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-  remove_action( 'wp_print_styles', 'print_emoji_styles' );
-  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+function disable_wp_emojicons()
+{
+    // all actions related to emojis
+    remove_action('admin_print_styles', 'print_emoji_styles');
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('admin_print_scripts', 'print_emoji_detection_script');
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+    remove_filter('the_content_feed', 'wp_staticize_emoji');
+    remove_filter('comment_text_rss', 'wp_staticize_emoji');
 }
-add_action( 'init', 'disable_wp_emojicons' );
-add_filter( 'emoji_svg_url', '__return_false' );
+add_action('init', 'disable_wp_emojicons');
+add_filter('emoji_svg_url', '__return_false');
 
 add_filter('wp_get_attachment_link', 'add_rel_to_gallery', 10, 2);
 
-function prefix_conditional_body_class($classes) {
+function prefix_conditional_body_class($classes)
+{
     if (is_page_template('home.php')) {
         $classes[] = 'home';
     } else if (is_page_template('gallery.php')) {
@@ -198,4 +206,23 @@ function prefix_conditional_body_class($classes) {
 
 add_filter('body_class', 'prefix_conditional_body_class');
 // Try to get around some WordPress upload bugs
-add_filter( 'big_image_size_threshold', '__return_false' );
+add_filter('big_image_size_threshold', '__return_false');
+
+function add_opengraph_tags()
+{
+    if (is_single()) { // Check if it's a single post
+        global $post;
+        if (has_post_thumbnail($post->ID)) {
+            $img_src = wp_get_attachment_image_url(get_post_thumbnail_id($post->ID), 'full');
+
+            // Output OpenGraph Tags
+            echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+            echo '<meta property="og:description" content="' . get_the_excerpt() . '"/>';
+            echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+            echo '<meta property="og:image" content="' . $img_src . '"/>';
+            // Add more tags as needed
+        }
+    }
+}
+
+add_action('wp_head', 'add_opengraph_tags');
