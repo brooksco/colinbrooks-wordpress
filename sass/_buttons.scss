@@ -4,7 +4,7 @@
   bottom: 0;
   color: var(--color-button-text);
   text-align: center;
-  padding: .5rem 2rem .6rem 2rem;
+  padding: 0.5rem 2rem 0.6rem 2rem;
   background: var(--color-blue);
   margin: var(--spacing-small) var(--spacing-small) var(--spacing-small) 0;
   border-radius: var(--spacing-medium);
@@ -12,6 +12,7 @@
   text-decoration: none;
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-heavy);
+  border-bottom: 0.25rem var(--color-blue--dark) solid;
 
   &::after {
     content: ' →';
@@ -19,15 +20,12 @@
 
   &:hover {
     opacity: 1;
-    bottom: .1rem;
-    background: var(--color-blue--dark);
+    bottom: 0.1rem;
+    filter: brightness(1.1);
   }
 
   &--secondary {
     background: var(--color-red-pink);
-
-    &:hover {
-      background: var(--color-red-pink--dark);
-    }
+    border-bottom: 0.25rem var(--color-red-pink--dark) solid;
   }
 }

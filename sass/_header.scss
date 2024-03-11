@@ -2,6 +2,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  gap: var(--spacing-small) var(--spacing-medium);
   margin: var(--spacing-large) 0;
 
   &__title {
@@ -13,9 +14,9 @@
       color: inherit;
     }
 
-    @include small {
-      margin-bottom: var(--spacing-small);
-    }
+    // @include small {
+    //   margin-bottom: var(--spacing-small);
+    // }
   }
 
   @include small {
@@ -32,25 +33,14 @@
   ul {
     display: flex;
     list-style: none;
+    gap: var(--spacing-medium);
     margin: 0;
     padding-left: 0;
 
     li {
-      margin: 0 0 0 var(--spacing-small);
-
       a {
         text-decoration: none;
         color: var(--color-text);
-      }
-    }
-  }
-
-  @include small {
-
-    ul {
-
-      li {
-        margin: 0 var(--spacing-small) 0 0;
       }
     }
   }
@@ -59,4 +49,3 @@
 .current-menu-item {
   font-weight: 600;
 }
-

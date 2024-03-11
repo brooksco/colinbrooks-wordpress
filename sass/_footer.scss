@@ -4,15 +4,14 @@
   &__links {
     ul {
       display: flex;
-	  gap: var(--spacing-small);
-      list-style: none;
+      gap: var(--spacing-small) var(--spacing-medium);
       margin: 0 0 var(--spacing-medium) 0;
       padding: 0;
       flex-wrap: wrap;
+      list-style: none;
     }
 
     li {
-
       a {
         text-decoration: none;
         color: var(--color-text);

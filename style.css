@@ -340,10 +340,10 @@ template {
   --color-link: royalblue;
   --color-link-hover: midnightblue;
   --color-blue: #4169e1;
-  --color-blue--dark: #1a3da6;
+  --color-blue--dark: #214cce;
   --color-pink: #e82199;
   --color-red-pink: #e14169;
-  --color-red-pink--dark: #951737;
+  --color-red-pink--dark: #ce214c;
   --color-gray: #677685;
   --color-text: #000000;
   --color-text-gray: #767676;
@@ -613,6 +613,7 @@ button:hover, button:active {
   text-decoration: none;
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-heavy);
+  border-bottom: 0.25rem var(--color-blue--dark) solid;
 }
 .button::after {
   content: " →";
@@ -620,13 +621,11 @@ button:hover, button:active {
 .button:hover {
   opacity: 1;
   bottom: 0.1rem;
-  background: var(--color-blue--dark);
+  filter: brightness(1.1);
 }
 .button--secondary {
   background: var(--color-red-pink);
-}
-.button--secondary:hover {
-  background: var(--color-red-pink--dark);
+  border-bottom: 0.25rem var(--color-red-pink--dark) solid;
 }
 
 .footer {
@@ -634,11 +633,11 @@ button:hover, button:active {
 }
 .footer__links ul {
   display: flex;
-  gap: var(--spacing-small);
-  list-style: none;
+  gap: var(--spacing-small) var(--spacing-medium);
   margin: 0 0 var(--spacing-medium) 0;
   padding: 0;
   flex-wrap: wrap;
+  list-style: none;
 }
 .footer__links li a {
   text-decoration: none;
@@ -658,6 +657,7 @@ button:hover, button:active {
 .header {
   display: flex;
   justify-content: space-between;
+  gap: var(--spacing-small) var(--spacing-medium);
   margin: var(--spacing-large) 0;
 }
 .header__title {
@@ -667,11 +667,6 @@ button:hover, button:active {
 .header__title a {
   text-decoration: none;
   color: inherit;
-}
-@media (max-width: calc(600px - 1px)) {
-  .header__title {
-    margin-bottom: var(--spacing-small);
-  }
 }
 @media (max-width: calc(600px - 1px)) {
   .header {
@@ -685,20 +680,13 @@ button:hover, button:active {
 .main-navigation ul {
   display: flex;
   list-style: none;
+  gap: var(--spacing-medium);
   margin: 0;
   padding-left: 0;
-}
-.main-navigation ul li {
-  margin: 0 0 0 var(--spacing-small);
 }
 .main-navigation ul li a {
   text-decoration: none;
   color: var(--color-text);
-}
-@media (max-width: calc(600px - 1px)) {
-  .main-navigation ul li {
-    margin: 0 var(--spacing-small) 0 0;
-  }
 }
 
 .current-menu-item {
