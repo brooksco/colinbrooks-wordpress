@@ -226,3 +226,9 @@ function add_opengraph_tags()
 }
 
 add_action('wp_head', 'add_opengraph_tags');
+
+function custom_excerpt_length()
+{
+    return 100; // Change 50 to the desired excerpt length
+}
+add_filter('excerpt_length', 'custom_excerpt_length');
